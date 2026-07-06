@@ -18,6 +18,7 @@
   <meta name="twitter:image" content="https://roopix.in/assets/og-image.jpg" />
   <meta name="theme-color" content="#E91E63" />
   <meta name="robots" content="index, follow" />
+  <meta name="author" content="ROOPIX" />
   <link rel="canonical" href="https://roopix.in" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="apple-touch-icon" href="assets/logo.png" />
@@ -26,6 +27,82 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* HERO TRUST BADGES */
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin-bottom: 1.5rem;
+    }
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      background: rgba(233,30,99,.08);
+      border: 1px solid rgba(233,30,99,.2);
+      color: rgba(255,255,255,.8);
+      font-family: 'Jost', sans-serif;
+      font-size: .72rem;
+      font-weight: 400;
+      letter-spacing: .08em;
+      padding: .38rem .85rem;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      white-space: nowrap;
+    }
+
+    /* STATS STRIP */
+    .section-stats {
+      background: var(--dark-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+    .stat-item {
+      background: var(--dark-2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      text-align: center;
+      gap: .4rem;
+      position: relative;
+      transition: background .4s ease;
+    }
+    .stat-item:hover { background: var(--dark-3); }
+    .stat-number {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      color: var(--pink, #E91E63);
+      line-height: 1;
+      letter-spacing: .02em;
+    }
+    .stat-label {
+      font-family: 'Jost', sans-serif;
+      font-size: .68rem;
+      font-weight: 400;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted, #999);
+    }
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-trust { gap: .45rem; }
+      .trust-badge { font-size: .68rem; padding: .32rem .7rem; }
+    }
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
 </head>
 <body>
 
@@ -117,6 +194,11 @@
         <p class="hero-eyebrow reveal-up">Luxury Beauty · Est. 2026</p>
         <h1 class="hero-title reveal-up">Beauty,<br /><em>Redefined.</em></h1>
         <p class="hero-sub reveal-up">Premium cosmetics. Authentic brands. Delivered with love.</p>
+        <div class="hero-trust reveal-up" aria-label="Trust signals">
+          <span class="trust-badge">✓ 100% Authentic</span>
+          <span class="trust-badge">🚚 Fast Delivery</span>
+          <span class="trust-badge">↩ Easy Returns</span>
+        </div>
         <div class="hero-actions reveal-up">
           <a href="#categories" class="btn-primary">Explore Collections</a>
           <a href="https://wa.me/919639160626" class="btn-ghost" target="_blank" rel="noopener">Order on WhatsApp</a>
@@ -157,6 +239,28 @@
         <span>Eye Drama</span><span class="dot">✦</span>
       </div>
     </div>
+
+    <!-- STATS STRIP -->
+    <section class="section-stats" aria-label="Social proof stats">
+      <div class="container stats-grid">
+        <div class="stat-item reveal-up" style="--delay:0s">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Premium Products</span>
+        </div>
+        <div class="stat-item reveal-up" style="--delay:.08s">
+          <span class="stat-number">1000+</span>
+          <span class="stat-label">Happy Orders</span>
+        </div>
+        <div class="stat-item reveal-up" style="--delay:.16s">
+          <span class="stat-number">52605</span>
+          <span class="stat-label">Customer Rating</span>
+        </div>
+        <div class="stat-item reveal-up" style="--delay:.24s">
+          <span class="stat-number">2026</span>
+          <span class="stat-label">Est. in India</span>
+        </div>
+      </div>
+    </section>
 
     <!-- ABOUT -->
     <section id="about" class="section-about">
@@ -501,7 +605,7 @@
           </div>
           <div class="store-map reveal-right">
             <iframe
-              src="https://www.google.com/maps?q=RFM9%2BRW+Joya,+Uttar+Pradesh&output=embed"
+              src="https://www.google.com/maps?q=Sheesh+Mahal+Building,+Joya,+Uttar+Pradesh,+India&output=embed"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
@@ -643,9 +747,7 @@
         <p class="footer-tagline">Beauty, Redefined.</p>
         <p class="footer-desc">India's premium destination for authentic luxury cosmetics. Shop with confidence, shine with purpose.</p>
         <div class="footer-social">
-          <a href="https://www.instagram.com/roopix.in?igsh=bnBlY3lkOHdha3Q3"
-target="_blank"
-rel="noopener" aria-label="Instagram" class="social-icon">
+          <a href="https://www.instagram.com/roopix.in" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
           <a href="https://wa.me/919639160626" aria-label="WhatsApp" class="social-icon">
