@@ -749,6 +749,28 @@ function isInViewport(el, threshold = 0.15) {
 
 
 /* ============================================================
+   13b. JOURNAL CARDS – click through to WhatsApp with topic
+   ============================================================ */
+
+(function initJournalCards() {
+  const topics = {
+    'The Rise of Hyaluronic Acid': "Hi ROOPIX, I'd love to know more about hyaluronic acid skincare recommendations!",
+    'Five Steps to a Flawless Base': "Hi ROOPIX, could you guide me on achieving a flawless makeup base?",
+    "This Season's Boldest Lip Trend": "Hi ROOPIX, I'm interested in this season's trending lip colors!",
+  };
+
+  $$('.journal-card').forEach(card => {
+    card.addEventListener('click', function () {
+      const h3 = this.querySelector('h3');
+      const title = h3 ? h3.textContent.trim() : '';
+      const msg = topics[title] || "Hi ROOPIX, I'd like to know more about your beauty tips!";
+      window.open(`https://wa.me/919639160626?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+  });
+})();
+
+
+/* ============================================================
    14. WHY-US CARDS – animated counter on scroll
    ============================================================ */
 
@@ -853,6 +875,60 @@ function isInViewport(el, threshold = 0.15) {
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) cancelAnimationFrame(rafId);
     else updateGlow();
+  });
+})();
+
+
+/* ============================================================
+   15b. CUSTOM CURSOR RING (desktop only – premium touch)
+   ============================================================ */
+
+(function initCustomCursor() {
+  // Only on non-touch desktop
+  if ('ontouchstart' in window || window.innerWidth < 1024 || prefersReducedMotion) return;
+
+  const ring = document.createElement('div');
+  ring.id = 'cursor-ring';
+  document.body.appendChild(ring);
+  document.body.classList.add('custom-cursor-active');
+
+  let mouseX = 0, mouseY = 0;
+  let ringX = 0, ringY = 0;
+  let rafId;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    ring.classList.add('active');
+  }, { passive: true });
+
+  document.addEventListener('mouseleave', () => {
+    ring.classList.remove('active');
+  });
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function updateRing() {
+    ringX = lerp(ringX, mouseX, 0.18);
+    ringY = lerp(ringY, mouseY, 0.18);
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+    rafId = requestAnimationFrame(updateRing);
+  }
+  updateRing();
+
+  const hoverSelector = 'a, button, input, .cat-card, .brand-card, .why-card, .testi-card, .journal-card, .testi-dot';
+
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(hoverSelector)) ring.classList.add('hover');
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest(hoverSelector)) ring.classList.remove('hover');
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) cancelAnimationFrame(rafId);
+    else updateRing();
   });
 })();
 
