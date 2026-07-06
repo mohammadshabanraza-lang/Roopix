@@ -654,8 +654,8 @@ function isInViewport(el, threshold = 0.15) {
     '.hero-eyebrow',
     '.hero-title',
     '.hero-sub',
+    '.hero-trust',
     '.hero-actions',
-    '.hero-content > .btn-primary',
     '.hero-badge',
     '.hero-scroll-hint',
   ];
