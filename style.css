@@ -457,6 +457,9 @@ body.custom-cursor-active,body.custom-cursor-active a,body.custom-cursor-active 
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .hero-trust{gap:.45rem}
   .trust-badge{font-size:.68rem;padding:.32rem .7rem}
+  .about-stat-card{right:1rem;bottom:1rem;padding:1rem 1.35rem}
+  .about-stat-card strong{font-size:1.8rem}
+  .about-stat-card span{font-size:.6rem;letter-spacing:.15em}
 }
 
 @media(max-width:480px){
@@ -465,6 +468,8 @@ body.custom-cursor-active,body.custom-cursor-active a,body.custom-cursor-active 
   .hero-title{font-size:2.8rem}
   .hero-badge{left:.5rem;bottom:1rem}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .about-stat-card{right:.6rem;padding:.85rem 1.1rem}
+  .about-stat-card strong{font-size:1.5rem}
 }
 
 /* ===== Custom Scrollbar ===== */
