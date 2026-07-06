@@ -23,7 +23,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
   if (!loader) return;
 
   // Minimum display time so the animation can breathe
-  const MIN_TIME = 2200;
+  const MIN_TIME = 1600;
   const start = Date.now();
 
   function hideLoader() {
@@ -219,6 +219,42 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
       e.target !== searchToggle
     ) closeSearch();
   });
+
+  // Search hint – shows WhatsApp fallback when user types
+  if (searchInput) {
+    const hint = document.createElement('div');
+    hint.style.cssText = `
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 0.5rem 0;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      display: none;
+      max-width: 700px;
+      margin: 0 auto;
+      font-family: 'Jost', sans-serif;
+      transition: color 0.3s ease;
+    `;
+    hint.textContent = 'Browse our store or order on WhatsApp for product search.';
+    hint.addEventListener('mouseenter', () => hint.style.color = 'rgba(233,30,99,0.8)');
+    hint.addEventListener('mouseleave', () => hint.style.color = 'rgba(255,255,255,0.4)');
+    hint.addEventListener('click', () => {
+      window.open('https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27m%20looking%20for%20a%20product!', '_blank');
+    });
+    searchBar.appendChild(hint);
+
+    searchInput.addEventListener('keyup', () => {
+      hint.style.display = searchInput.value.length >= 2 ? 'block' : 'none';
+    });
+
+    // Hide hint when search closes
+    const origCloseSearch = closeSearch;
+    function closeSearch() {
+      origCloseSearch();
+      hint.style.display = 'none';
+    }
+  }
 })();
 
 
@@ -658,12 +694,21 @@ function isInViewport(el, threshold = 0.15) {
 
 
 /* ============================================================
-   13. CATEGORY CARDS – ripple click effect
+   13. CATEGORY CARDS – ripple click effect + WhatsApp navigation
    ============================================================ */
 
 (function initCategoryRipple() {
+  const categoryLinks = {
+    'Lips':        'https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Lips%20collection!',
+    'Face Makeup': 'https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Face%20Makeup%20collection!',
+    'Eye Makeup':  'https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Eye%20Makeup%20collection!',
+    'Skincare':    'https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Skincare%20collection!',
+    'Accessories': 'https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Accessories%20collection!',
+  };
+
   $$('.cat-card').forEach(card => {
     card.addEventListener('click', function (e) {
+      // Ripple animation
       const ripple = document.createElement('span');
       ripple.style.cssText = `
         position:absolute;
@@ -680,6 +725,12 @@ function isInViewport(el, threshold = 0.15) {
       this.style.position = 'relative';
       this.appendChild(ripple);
       setTimeout(() => ripple.remove(), 600);
+
+      // WhatsApp navigation after ripple starts
+      const h3 = this.querySelector('h3');
+      const categoryName = h3 ? h3.textContent.trim() : '';
+      const url = categoryLinks[categoryName] || 'https://api1.vyaparapp.in/store/roopix';
+      setTimeout(() => window.open(url, '_blank'), 120);
     });
   });
 
@@ -702,25 +753,6 @@ function isInViewport(el, threshold = 0.15) {
    ============================================================ */
 
 (function initCounters() {
-  // Add counters to the badge in hero
-  const badge = $('.badge-number');
-  if (!badge) return;
-
-  const target = parseInt(badge.textContent.replace(/\D/g, ''), 10);
-  if (isNaN(target)) return;
-
-  let counted = false;
-
-  const obs = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting && !counted) {
-      counted = true;
-      animateCount(badge, target, '+');
-      obs.disconnect();
-    }
-  }, { threshold: 0.5 });
-
-  obs.observe(badge);
-
   function animateCount(el, end, suffix = '') {
     if (prefersReducedMotion) { el.textContent = end + suffix; return; }
     const duration = 1600;
@@ -733,6 +765,33 @@ function isInViewport(el, threshold = 0.15) {
     }
     requestAnimationFrame(step);
   }
+
+  function setupCounter(el, suffixOverride) {
+    const raw = el.textContent.trim();
+    const num = parseInt(raw.replace(/\D/g, ''), 10);
+    if (isNaN(num)) return;
+
+    // Detect suffix: passed override, or trailing non-numeric chars in text
+    const detectedSuffix = suffixOverride || raw.replace(/^[\d,]+/, '').trim() || '';
+    let counted = false;
+
+    const obs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !counted) {
+        counted = true;
+        animateCount(el, num, detectedSuffix);
+        obs.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    obs.observe(el);
+  }
+
+  // Hero badge counter
+  const badge = $('.badge-number');
+  if (badge) setupCounter(badge, '+');
+
+  // Stats strip counters (added dynamically or in HTML with class .stat-number)
+  $$('.stat-number').forEach(el => setupCounter(el));
 })();
 
 
@@ -867,6 +926,12 @@ function isInViewport(el, threshold = 0.15) {
 
   window.addEventListener('scroll', checkOverlap, { passive: true });
   checkOverlap();
+
+  // Pre-fill WhatsApp message on float button
+  const waFloat = $('.whatsapp-float');
+  if (waFloat) {
+    waFloat.href = 'https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20know%20more%20about%20your%20products!';
+  }
 })();
 
 
