@@ -161,6 +161,18 @@ ul{list-style:none}
 .scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,#fff,transparent);animation:scrollLine 1.5s ease infinite}
 @keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
+/* --- HERO TRUST BADGES --- */
+.hero-trust{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem}
+.trust-badge{display:inline-flex;align-items:center;gap:.35rem;background:rgba(233,30,99,.08);border:1px solid rgba(233,30,99,.2);color:rgba(255,255,255,.8);font-family:var(--font-body);font-size:.72rem;font-weight:400;letter-spacing:.08em;padding:.38rem .85rem;border-radius:999px;backdrop-filter:blur(8px);white-space:nowrap}
+
+/* --- STATS STRIP --- */
+.section-stats{background:var(--dark-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3.5rem 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.stat-item{background:var(--dark-2);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1rem;text-align:center;gap:.4rem;position:relative;transition:background .4s ease}
+.stat-item:hover{background:var(--dark-3)}
+.stat-number{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--pink);line-height:1;letter-spacing:.02em}
+.stat-label{font-family:var(--font-body);font-size:.68rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
 /* --- MARQUEE --- */
 .marquee-bar{background:var(--dark-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.8rem 0;overflow:hidden}
 .marquee-track{display:flex;gap:2.5rem;white-space:nowrap;animation:marqueeScroll 30s linear infinite;width:max-content}
@@ -234,8 +246,6 @@ ul{list-style:none}
 .brand-name-fallback{display:none;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.2rem;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.5);text-align:center;transition:var(--transition)}
 .brand-card:hover .brand-name-fallback{color:#fff}
 .brand-origin{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.6;font-family:'Jost',sans-serif}
-.coming-soon-text{opacity:.35;display:flex!important}
-.coming-soon-text::before{content:'🔒 ';font-size:.8rem;margin-right:.3rem}
 
 /* --- WHY ROOPIX --- */
 .section-why{padding:8rem 0;background:var(--black)}
@@ -400,6 +410,9 @@ ul{list-style:none}
   .store-map iframe{height:280px}
   .wa-action{align-items:stretch;width:100%}
   .btn-wa{justify-content:center}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-trust{gap:.45rem}
+  .trust-badge{font-size:.68rem;padding:.32rem .7rem}
 }
 
 @media(max-width:480px){
@@ -407,6 +420,7 @@ ul{list-style:none}
   .contact-grid{grid-template-columns:1fr}
   .hero-title{font-size:2.8rem}
   .hero-badge{left:.5rem;bottom:1rem}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
 }
 
 /* ===== Custom Scrollbar ===== */
