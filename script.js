@@ -23,7 +23,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
   if (!loader) return;
 
   // Minimum display time so the animation can breathe
-  const MIN_TIME = 1600;
+  const MIN_TIME = 800;
   const start = Date.now();
 
   function hideLoader() {
@@ -248,12 +248,27 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
       hint.style.display = searchInput.value.length >= 2 ? 'block' : 'none';
     });
 
-    // Hide hint when search closes
-    const origCloseSearch = closeSearch;
-    function closeSearch() {
-      origCloseSearch();
+    // Hide hint when search closes — patch existing closeSearch, no redeclaration
+    const _origClose = closeSearch;
+    searchClose && searchClose.removeEventListener('click', closeSearch);
+    document.removeEventListener('keydown', closeSearch);
+
+    function closeSearchWithHint() {
+      _origClose();
       hint.style.display = 'none';
     }
+
+    searchClose && searchClose.addEventListener('click', closeSearchWithHint);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && searchBar.classList.contains('open')) closeSearchWithHint();
+    });
+    document.addEventListener('click', e => {
+      if (
+        searchBar.classList.contains('open') &&
+        !searchBar.contains(e.target) &&
+        e.target !== searchToggle
+      ) closeSearchWithHint();
+    });
   }
 })();
 
@@ -466,6 +481,8 @@ function isInViewport(el, threshold = 0.15) {
   const canvas = $('#particleCanvas');
   if (!canvas || prefersReducedMotion) return;
 
+  // Defer particle init by 2s — lets critical content paint first, especially on mobile
+  setTimeout(function () {
   const ctx = canvas.getContext('2d');
   let particles = [];
   let animFrame;
@@ -590,6 +607,7 @@ function isInViewport(el, threshold = 0.15) {
       this.y += (dy / dist) * force * 1.5;
     }
   };
+  }, 2000); // end deferred init
 })();
 
 
@@ -599,7 +617,8 @@ function isInViewport(el, threshold = 0.15) {
 
 (function initParallax() {
   const heroImg = $('.hero-img');
-  if (!heroImg || prefersReducedMotion) return;
+  // Skip on mobile — hero image is hidden, no point running scroll events
+  if (!heroImg || prefersReducedMotion || window.innerWidth < 1024) return;
 
   let ticking = false;
 
@@ -667,11 +686,11 @@ function isInViewport(el, threshold = 0.15) {
     el.style.transform = 'translateY(28px)';
     el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
 
-    // Wait for loader to clear (~2.3s), then stagger
+    // Wait for loader to clear (~0.9s), then stagger
     setTimeout(() => {
       el.style.opacity = '1';
       el.style.transform = 'translateY(0)';
-    }, 2400 + i * 130);
+    }, 1000 + i * 130);
   });
 })();
 
@@ -810,10 +829,12 @@ function isInViewport(el, threshold = 0.15) {
 
   // Hero badge counter
   const badge = $('.badge-number');
-  if (badge) setupCounter(badge, '+');
+  if (badge && !badge.hasAttribute('data-no-count')) setupCounter(badge, '+');
 
-  // Stats strip counters (added dynamically or in HTML with class .stat-number)
-  $$('.stat-number').forEach(el => setupCounter(el));
+  // Stats strip counters — skip elements marked data-no-count (e.g. 5★, 2026)
+  $$('.stat-number').forEach(el => {
+    if (!el.hasAttribute('data-no-count')) setupCounter(el);
+  });
 })();
 
 
