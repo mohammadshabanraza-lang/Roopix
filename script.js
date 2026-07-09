@@ -469,6 +469,17 @@ function isInViewport(el, threshold = 0.15) {
     resizeTimer = setTimeout(() => goTo(0), 200);
   });
 
+  // FIX 18: Keyboard arrow key navigation
+  document.addEventListener('keydown', e => {
+    const wrap = $('.testimonials-track-wrap');
+    if (!wrap) return;
+    const rect = wrap.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    if (!inView) return;
+    if (e.key === 'ArrowLeft') { prev(); resetAuto(); }
+    if (e.key === 'ArrowRight') { next(); resetAuto(); }
+  });
+
   goTo(0);
 })();
 
@@ -709,12 +720,63 @@ function isInViewport(el, threshold = 0.15) {
   track.addEventListener('mouseleave', () => {
     track.style.animationPlayState = 'running';
   });
+
+  // FIX 21: Pause marquee CSS animation when not in viewport — saves CPU on mobile
+  const marqueeBar = track.closest('.marquee-bar') || track.parentElement;
+  if (marqueeBar) {
+    const obs = new IntersectionObserver(entries => {
+      track.style.animationPlayState = entries[0].isIntersecting ? 'running' : 'paused';
+    }, { threshold: 0 });
+    obs.observe(marqueeBar);
+  }
 })();
 
 
 /* ============================================================
-   13. CATEGORY CARDS – ripple click effect + WhatsApp navigation
+   TOAST NOTIFICATION SYSTEM
    ============================================================ */
+
+(function initToast() {
+  window.roopixToast = function(msg, duration = 2200) {
+    let existing = document.getElementById('roopix-toast');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.id = 'roopix-toast';
+    toast.textContent = msg;
+    toast.style.cssText = `
+      position: fixed;
+      bottom: 6rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(18,18,18,.96);
+      border: 1px solid rgba(233,30,99,.3);
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      padding: .75rem 1.75rem;
+      z-index: 9995;
+      opacity: 0;
+      transition: opacity .35s ease, transform .35s ease;
+      pointer-events: none;
+      white-space: nowrap;
+      backdrop-filter: blur(12px);
+    `;
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(() => {
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateX(-50%) translateY(0)';
+    });
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(-50%) translateY(10px)';
+      setTimeout(() => toast.remove(), 400);
+    }, duration);
+  };
+})();
 
 (function initCategoryRipple() {
   const categoryLinks = {
@@ -749,6 +811,7 @@ function isInViewport(el, threshold = 0.15) {
       const h3 = this.querySelector('h3');
       const categoryName = h3 ? h3.textContent.trim() : '';
       const url = categoryLinks[categoryName] || 'https://api1.vyaparapp.in/store/roopix';
+      if (window.roopixToast) window.roopixToast('Opening WhatsApp for ' + (categoryName || 'Store') + '…');
       setTimeout(() => window.open(url, '_blank'), 120);
     });
   });
@@ -783,6 +846,7 @@ function isInViewport(el, threshold = 0.15) {
       const h3 = this.querySelector('h3');
       const title = h3 ? h3.textContent.trim() : '';
       const msg = topics[title] || "Hi ROOPIX, I'd like to know more about your beauty tips!";
+      if (window.roopixToast) window.roopixToast('Opening WhatsApp…');
       window.open(`https://wa.me/919639160626?text=${encodeURIComponent(msg)}`, '_blank');
     });
   });
@@ -1151,6 +1215,41 @@ function isInViewport(el, threshold = 0.15) {
   skip.addEventListener('focus', () => skip.style.top = '1rem');
   skip.addEventListener('blur', () => skip.style.top = '-100px');
   document.body.prepend(skip);
+})();
+
+
+/* ============================================================
+   23. SHIPPING & RETURNS MODAL
+   ============================================================ */
+
+(function initShippingModal() {
+  const trigger = $('#shippingModalTrigger');
+  const modal = $('#shippingModal');
+  const closeBtn = $('#shippingModalClose');
+  if (!trigger || !modal) return;
+
+  function openModal(e) {
+    e.preventDefault();
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => modal.querySelector('div').focus && modal.querySelector('div').focus(), 100);
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  trigger.addEventListener('click', openModal);
+  closeBtn && closeBtn.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+  });
 })();
 
 
