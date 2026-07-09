@@ -27,6 +27,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Preload hero image — biggest LCP element -->
   <link rel="preload" as="image" href="assets/hero-banner.webp" fetchpriority="high" />
+  <!-- Preload about/store banner — visible above fold on many screens -->
+  <link rel="preload" as="image" href="assets/store-banner.webp" />
   <!-- Async font load — prevents render blocking on mobile -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" /></noscript>
@@ -486,6 +488,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/><circle cx="12" cy="12" r="5"/></svg>
             </div>
             <p class="journal-tag">Ingredient Spotlight</p>
+            <time datetime="2026-06" class="journal-date">June 2026</time>
             <h3>The Rise of Hyaluronic Acid</h3>
             <p class="journal-excerpt">Why this humble molecule became skincare's most-loved hydrator — and how to make it work for your skin type.</p>
             <span class="journal-read">Read More →</span>
@@ -495,6 +498,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
             </div>
             <p class="journal-tag">Beauty Tip</p>
+            <time datetime="2026-05" class="journal-date">May 2026</time>
             <h3>Five Steps to a Flawless Base</h3>
             <p class="journal-excerpt">Our beauty advisors' go-to routine for a natural, long-wearing base that photographs beautifully.</p>
             <span class="journal-read">Read More →</span>
@@ -504,6 +508,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6 2 2 6.48 2 11c0 3.2 1.7 6 4.3 7.8L12 22l5.7-3.2C20.3 17 22 14.2 22 11c0-4.52-4-9-10-9z"/></svg>
             </div>
             <p class="journal-tag">Trend Story</p>
+            <time datetime="2026-07" class="journal-date">July 2026</time>
             <h3>This Season's Boldest Lip Trend</h3>
             <p class="journal-excerpt">From glossy nudes to deep berry stains — the shades our customers can't stop asking for.</p>
             <span class="journal-read">Read More →</span>
@@ -594,16 +599,17 @@
           <p class="section-eyebrow">Real Love</p>
           <h2 class="section-title">What Our Customers <em>Say</em></h2>
         </div>
-        <div class="testimonials-track-wrap">
+        <div class="testimonials-track-wrap" aria-live="polite" aria-atomic="false">
           <div class="testimonials-track" id="testimonialsTrack">
             <div class="testi-card">
               <div class="testi-stars">★★★★★</div>
               <p>"ROOPIX delivered my Swiss Beauty haul in record time. Products are 100% genuine and the packaging was so elegant. I'm a customer for life!"</p>
               <div class="testi-author">
-                <div class="testi-avatar">P</div>
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#f953c6,#b91d73)">P</div>
                 <div>
                   <strong>Priya Sharma</strong>
                   <span>Delhi, India</span>
+                  <time datetime="2026-06" style="display:block;font-size:.68rem;color:var(--muted);letter-spacing:.08em;margin-top:.2rem">June 2026</time>
                 </div>
               </div>
             </div>
@@ -611,10 +617,11 @@
               <div class="testi-stars">★★★★★</div>
               <p>"I was skeptical ordering online but ROOPIX made it so easy. WhatsApp ordering is brilliant — my Lakmé foundation matched perfectly. Truly premium service!"</p>
               <div class="testi-author">
-                <div class="testi-avatar">N</div>
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#f7971e,#ffd200)">N</div>
                 <div>
                   <strong>Neha Gupta</strong>
                   <span>Lucknow, UP</span>
+                  <time datetime="2026-05" style="display:block;font-size:.68rem;color:var(--muted);letter-spacing:.08em;margin-top:.2rem">May 2026</time>
                 </div>
               </div>
             </div>
@@ -622,10 +629,11 @@
               <div class="testi-stars">★★★★★</div>
               <p>"The MARS lipstick collection at ROOPIX is unreal! Great prices, fast delivery, and the team helped me pick the perfect nude shade. Highly recommend!"</p>
               <div class="testi-author">
-                <div class="testi-avatar">A</div>
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#11998e,#38ef7d)">A</div>
                 <div>
                   <strong>Anjali Verma</strong>
                   <span>Agra, UP</span>
+                  <time datetime="2026-05" style="display:block;font-size:.68rem;color:var(--muted);letter-spacing:.08em;margin-top:.2rem">May 2026</time>
                 </div>
               </div>
             </div>
@@ -633,10 +641,11 @@
               <div class="testi-stars">★★★★★</div>
               <p>"Finally a beauty store that understands quality. Every product from ROOPIX has been authentic and the customer support is genuinely helpful. My go-to forever."</p>
               <div class="testi-author">
-                <div class="testi-avatar">S</div>
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#8e2de2,#4a00e0)">S</div>
                 <div>
                   <strong>Sakshi Agarwal</strong>
                   <span>Kanpur, UP</span>
+                  <time datetime="2026-04" style="display:block;font-size:.68rem;color:var(--muted);letter-spacing:.08em;margin-top:.2rem">April 2026</time>
                 </div>
               </div>
             </div>
@@ -644,10 +653,11 @@
               <div class="testi-stars">★★★★★</div>
               <p>"Ordered Nykaa skincare and Insight kajal from ROOPIX. Packed beautifully, delivered quickly. The WhatsApp experience is so personal and convenient. Love it!"</p>
               <div class="testi-author">
-                <div class="testi-avatar">R</div>
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#fc5c7d,#6a3093)">R</div>
                 <div>
                   <strong>Riya Singh</strong>
                   <span>Varanasi, UP</span>
+                  <time datetime="2026-06" style="display:block;font-size:.68rem;color:var(--muted);letter-spacing:.08em;margin-top:.2rem">June 2026</time>
                 </div>
               </div>
             </div>
@@ -734,6 +744,7 @@
           <li><a href="#why-us">Why Choose Us</a></li>
           <li><a href="#journal">The Edit</a></li>
           <li><a href="#store">Store Location</a></li>
+          <li><a href="#" id="shippingModalTrigger">Shipping & Returns</a></li>
         </ul>
       </div>
       <div class="footer-links-col">
@@ -762,6 +773,85 @@
     </div>
   </footer>
 
+  <!-- SHIPPING & RETURNS MODAL -->
+  <div id="shippingModal" role="dialog" aria-modal="true" aria-label="Shipping and Returns" style="display:none;position:fixed;inset:0;z-index:9990;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:2rem">
+    <div style="background:var(--dark-2);border:1px solid var(--border);max-width:540px;width:100%;padding:3rem;position:relative;max-height:90vh;overflow-y:auto">
+      <button id="shippingModalClose" aria-label="Close" style="position:absolute;top:1.25rem;right:1.25rem;background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;line-height:1;transition:color .3s">✕</button>
+      <p style="font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rose-gold-light);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem"><span style="display:inline-block;width:20px;height:1px;background:var(--rose-gold)"></span>Our Policy</p>
+      <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:300;color:#fff;margin-bottom:2rem;line-height:1.2">Shipping & <em style="font-style:italic;color:var(--pink)">Returns</em></h2>
+      <div style="display:flex;flex-direction:column;gap:1.5rem">
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <span style="font-size:1.2rem;flex-shrink:0">🚚</span>
+          <div><strong style="display:block;font-size:.82rem;letter-spacing:.08em;color:#fff;margin-bottom:.3rem">Delivery Time</strong><p style="font-size:.88rem;color:var(--muted);line-height:1.8">3–7 business days across India. Real-time order updates via WhatsApp.</p></div>
+        </div>
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <span style="font-size:1.2rem;flex-shrink:0">💸</span>
+          <div><strong style="display:block;font-size:.82rem;letter-spacing:.08em;color:#fff;margin-bottom:.3rem">Free Shipping</strong><p style="font-size:.88rem;color:var(--muted);line-height:1.8">Free shipping on all orders above ₹499. Flat rate below that.</p></div>
+        </div>
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <span style="font-size:1.2rem;flex-shrink:0">↩</span>
+          <div><strong style="display:block;font-size:.82rem;letter-spacing:.08em;color:#fff;margin-bottom:.3rem">Easy Returns</strong><p style="font-size:.88rem;color:var(--muted);line-height:1.8">Returns accepted within 7 days of delivery for unopened, unused products. Message us on WhatsApp to initiate.</p></div>
+        </div>
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <span style="font-size:1.2rem;flex-shrink:0">✓</span>
+          <div><strong style="display:block;font-size:.82rem;letter-spacing:.08em;color:#fff;margin-bottom:.3rem">Authenticity Guarantee</strong><p style="font-size:.88rem;color:var(--muted);line-height:1.8">100% genuine products sourced from authorised distributors. Full refund if any product is ever found inauthentic.</p></div>
+        </div>
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <span style="font-size:1.2rem;flex-shrink:0">💵</span>
+          <div><strong style="display:block;font-size:.82rem;letter-spacing:.08em;color:#fff;margin-bottom:.3rem">Cash on Delivery</strong><p style="font-size:.88rem;color:var(--muted);line-height:1.8">COD available on select pincodes. Message us on WhatsApp to confirm availability in your area.</p></div>
+        </div>
+      </div>
+      <a href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%20have%20a%20question%20about%20shipping%20or%20returns!" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:2rem;background:var(--pink);color:#fff;font-family:var(--font-body);font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 2rem">Ask on WhatsApp →</a>
+    </div>
+  </div>
+
   <script src="script.js" defer></script>
+  <!-- Structured Data: LocalBusiness schema for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ROOPIX",
+    "description": "Premium luxury cosmetics retailer in Joya, Uttar Pradesh. Authentic beauty brands including Swiss Beauty, MARS, Lakmé, Nykaa and more.",
+    "url": "https://roopix.in",
+    "logo": "https://roopix.in/assets/logo.webp",
+    "image": "https://roopix.in/assets/og-image.jpg",
+    "telephone": "+91-96391-60626",
+    "email": "roopix.in@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sheesh Mahal Building",
+      "addressLocality": "Joya",
+      "addressRegion": "Uttar Pradesh",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "29.5833",
+      "longitude": "77.7167"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "10:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "11:00",
+        "closes": "18:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/roopix.in",
+      "https://wa.me/919639160626"
+    ],
+    "priceRange": "₹₹",
+    "currenciesAccepted": "INR",
+    "paymentAccepted": "Cash, UPI, WhatsApp Pay"
+  }
+  </script>
 </body>
 </html>
