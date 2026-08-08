@@ -628,10 +628,10 @@ function isInViewport(el, threshold = 0.15) {
 
 (function initParallax() {
   const heroImg = $('.hero-img');
-  // Skip on mobile — hero image is hidden, no point running scroll events
-  if (!heroImg || prefersReducedMotion || window.innerWidth < 1024) return;
+  if (!heroImg || prefersReducedMotion) return;
 
   let ticking = false;
+  const factor = window.innerWidth < 1024 ? 0.1 : 0.22;
 
   window.addEventListener('scroll', () => {
     if (!ticking) {
@@ -639,7 +639,7 @@ function isInViewport(el, threshold = 0.15) {
         const scrollY = window.scrollY;
         const heroH = document.getElementById('hero')?.offsetHeight || window.innerHeight;
         if (scrollY < heroH) {
-          const offset = scrollY * 0.22;
+          const offset = scrollY * factor;
           heroImg.style.transform = `translateY(${offset}px) scale(1.04)`;
         }
         ticking = false;
@@ -647,6 +647,40 @@ function isInViewport(el, threshold = 0.15) {
       ticking = true;
     }
   }, { passive: true });
+})();
+
+
+/* ============================================================
+   9b. ABOUT IMAGE SCROLL PARALLAX (subtle, premium editorial feel)
+   ============================================================ */
+
+(function initAboutParallax() {
+  const wrap = $('.about-img-wrap');
+  const img = wrap ? $('img', wrap) : null;
+  if (!wrap || !img || prefersReducedMotion) return;
+
+  let ticking = false;
+
+  function update() {
+    const rect = wrap.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // Only animate while the element is within/near the viewport
+    if (rect.bottom > 0 && rect.top < vh) {
+      const progress = (vh - rect.top) / (vh + rect.height); // 0 → 1 as it travels through
+      const offset = (progress - 0.5) * 40; // ±20px drift
+      img.style.transform = `translateY(${offset}px) scale(1.06)`;
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  update();
 })();
 
 
