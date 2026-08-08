@@ -84,6 +84,10 @@ body::before{
 .btn-ghost{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(255,255,255,.25);color:#fff;font-family:var(--font-body);font-size:.8rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 2.2rem;transition:var(--transition);backdrop-filter:blur(8px);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
 .btn-ghost:hover{border-color:var(--pink);color:var(--pink);transform:translateY(-2px)}
 
+/* Third-tier hero CTA — subtle text link, echoes the existing nav-link/journal-read underline treatment */
+.hero-wa-link{display:inline-flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.6);font-family:var(--font-body);font-size:.78rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;padding:.85rem .25rem;transition:var(--transition);border-bottom:1px solid transparent}
+.hero-wa-link:hover{color:var(--pink);border-bottom-color:var(--pink)}
+
 /* --- LOADER --- */
 #loader{position:fixed;inset:0;background:var(--black);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s ease,visibility .6s ease}
 #loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
@@ -165,6 +169,8 @@ body.custom-cursor-active,body.custom-cursor-active a,body.custom-cursor-active 
 .mobile-menu a:hover{color:var(--pink)}
 .mobile-cta{font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:.9rem 2.5rem;background:var(--pink);color:#fff;border:1px solid var(--pink);transition:var(--transition)}
 .mobile-cta:hover{background:transparent;color:var(--pink)}
+.mobile-cta-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25);margin-top:1rem}
+.mobile-cta-ghost:hover{background:transparent;border-color:var(--pink);color:var(--pink)}
 
 /* --- HERO --- */
 #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding:100px 2rem 2rem}
@@ -492,6 +498,7 @@ body.custom-cursor-active,body.custom-cursor-active a,body.custom-cursor-active 
   .search-bar{padding:1.25rem 1.25rem}
   .hero-actions{width:100%}
   .hero-actions .btn-primary,.hero-actions .btn-ghost{flex:1 1 auto;justify-content:center}
+  .hero-actions .hero-wa-link{flex:1 1 100%;justify-content:center}
 }
 
 @media(max-width:480px){
