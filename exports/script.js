@@ -172,4 +172,3 @@
     else { document.execCommand('copy'); done(); }
   });
 })();
-
