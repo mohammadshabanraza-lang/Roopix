@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>document.documentElement.className += ' js';</script>
+  <script>document.documentElement.className+=' js'+(matchMedia('(prefers-reduced-motion: reduce)').matches?'':' motion-on')+(/\/beauty\//.test(location.pathname)?' pg-beauty':/\/exports\//.test(location.pathname)?' pg-exports':' pg-home');setTimeout(function(){if(!window.__roopixBase){var r=document.documentElement;r.className=r.className.replace(/\b(js|motion-on|mx-ready)\b/g,'')}},4000);</script>
   <title>ROOPIX Beauty — Beauty, Redefined | Joya, Uttar Pradesh</title>
   <meta name="description" content="ROOPIX Beauty: makeup, skincare and beauty essentials from Swiss Beauty, MARS, Insight, Lakmé and Nykaa. Shop on our online store, order on WhatsApp or visit us in Joya, Amroha." />
   <meta name="keywords" content="ROOPIX Beauty, makeup, skincare, cosmetics, Swiss Beauty, MARS, Lakmé, Nykaa, Joya, Amroha" />
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="ROOPIX Beauty — Beauty, Redefined" />
   <meta name="twitter:description" content="Makeup, skincare and beauty essentials. Shop online, order on WhatsApp or visit us in Joya." />
   <meta name="twitter:image" content="https://roopix.in/assets/og-image.jpg" />
-  <link rel="icon" type="image/webp" href="../assets/favicon.webp" />
+  <link rel="icon" type="image/webp" href="../assets/logo.webp" />
   <link rel="apple-touch-icon" href="../assets/logo.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,6 +32,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" /></noscript>
   <link rel="stylesheet" href="../assets/base.css?v=4" />
   <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="../assets/motion.css?v=5" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -266,124 +267,4 @@
             </div>
             <div class="store-detail">
               <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-              <!-- OWNER: opening hours were removed because they were unverified. When confirmed, replace the line below, e.g. "Mon–Sat: 10:00 AM – 8:00 PM". -->
-              <div><strong>Opening Hours</strong><p>Please message us on WhatsApp to confirm today's opening hours before you visit.</p></div>
-            </div>
-            <a class="btn btn-primary" href="https://maps.app.goo.gl/oPUPbjifR8qvqpPLA" target="_blank" rel="noopener">Get Directions</a>
-          </div>
-          <div class="store-map reveal">
-            <iframe src="https://www.google.com/maps?q=Sheesh+Mahal+Building,+Ikonda+Road,+Joya,+Amroha,+Uttar+Pradesh+244221,+India&amp;output=embed" title="Map showing the ROOPIX store in Joya, Amroha" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CUSTOMER REVIEWS: intentionally empty.
-         The earlier testimonials (names, cities, star ratings) could not be verified and were removed.
-         To add a real review later, with the customer's permission, copy this block into a new <section id="reviews">:
-         <blockquote class="review"><p>"Exact words of the customer."</p><footer>First name, City, Month Year</footer></blockquote> -->
-
-    <!-- CONTACT -->
-    <section id="contact" class="section b-contact">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Get in Touch</p>
-          <h2 class="section-title">We'd love to <em>hear</em> from you</h2>
-        </div>
-        <ul class="contact-grid">
-          <li><a class="contact-card reveal" href="tel:+919639160626"><strong>Phone</strong><span>+91 96391 60626</span></a></li>
-          <li><a class="contact-card reveal" href="https://wa.me/919639160626" target="_blank" rel="noopener"><strong>WhatsApp</strong><span>+91 96391 60626</span></a></li>
-          <li><a class="contact-card reveal" href="mailto:roopix.in@gmail.com"><strong>Email</strong><span>roopix.in@gmail.com</span></a></li>
-          <li><a class="contact-card reveal" href="https://www.instagram.com/roopix.in" target="_blank" rel="noopener"><strong>Instagram</strong><span>@roopix.in</span></a></li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <img class="footer-logo" src="../assets/logo.webp" alt="ROOPIX" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
-        <span class="footer-logo-text" hidden>ROOPIX</span>
-        <p class="footer-tagline">Beauty, Redefined.</p>
-        <p class="footer-desc">Cosmetics, skincare and beauty essentials from Joya, Uttar Pradesh.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/roopix.in" target="_blank" rel="noopener" aria-label="ROOPIX on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="https://wa.me/919639160626" target="_blank" rel="noopener" aria-label="ROOPIX on WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.733 5.47 2.018 7.773L0 32l8.418-2.211A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.26 22.26c-.35.985-2.044 1.876-2.823 1.997-.72.113-1.63.16-2.631-.165-.607-.2-1.386-.468-2.38-.916-4.183-1.808-6.913-6.01-7.12-6.287-.207-.276-1.69-2.248-1.69-4.291 0-2.043 1.07-3.049 1.45-3.464.38-.415.83-.519 1.107-.519h.795c.254 0 .6.095.913.726l1.31 3.089c.164.39.275.843.027 1.235l-.69 1.028c-.207.31-.29.46-.14.717.34.586 1.43 2.105 3.07 3.412 1.705 1.368 3.15 1.8 3.72 2 .29.1.642.073.878-.163l.806-.9c.254-.291.634-.46 1.022-.364l3.027.706c.572.134.86.534.86.994v1.179c0 .415-.062.945-.511 1.526z"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <h2>Explore</h2>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#categories">Categories</a></li>
-          <li><a href="#brands">Brands</a></li>
-          <li><a href="#store">Store Location</a></li>
-          <li><button type="button" data-dialog-open="infoDialog">Delivery &amp; Returns</button></li>
-        </ul>
-      </div>
-      <div>
-        <h2>ROOPIX</h2>
-        <ul>
-          <li><a href="../">ROOPIX Home</a></li>
-          <li><a href="../exports/">ROOPIX Exports</a></li>
-          <li><a href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener">Online Store</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Contact</h2>
-        <ul>
-          <li><a href="tel:+919639160626">+91 96391 60626</a></li>
-          <li><a href="mailto:roopix.in@gmail.com">roopix.in@gmail.com</a></li>
-          <li><a href="https://wa.me/919639160626" target="_blank" rel="noopener">WhatsApp Order</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© <span data-year>2026</span> ROOPIX. All rights reserved.</p>
-      <p><a href="mailto:roopix.in@gmail.com">roopix.in@gmail.com</a> · <a href="https://wa.me/919639160626" target="_blank" rel="noopener">WhatsApp</a></p>
-    </div>
-  </footer>
-
-  <!-- OWNER: delivery, returns, payment and shipping-threshold claims were removed because they were unverified.
-       Add confirmed policy text here once you have it. -->
-  <dialog id="infoDialog" aria-labelledby="infoTitle">
-    <div class="dialog-body">
-      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">✕</button>
-      <p class="eyebrow">Orders</p>
-      <h2 id="infoTitle">Delivery &amp; Returns</h2>
-      <p>Delivery options, payment methods and return terms can differ by product and location. Message us on WhatsApp before you order and we will confirm the details for you.</p>
-      <a class="btn btn-wa" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%20have%20a%20question%20about%20delivery%20or%20returns." target="_blank" rel="noopener">Ask on WhatsApp</a>
-    </div>
-  </dialog>
-
-  <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
-  <a class="float-wa" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20know%20more%20about%20your%20products!" target="_blank" rel="noopener" aria-label="Chat with ROOPIX on WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" width="28" height="28" aria-hidden="true"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.733 5.47 2.018 7.773L0 32l8.418-2.211A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.26 22.26c-.35.985-2.044 1.876-2.823 1.997-.72.113-1.63.16-2.631-.165-.607-.2-1.386-.468-2.38-.916-4.183-1.808-6.913-6.01-7.12-6.287-.207-.276-1.69-2.248-1.69-4.291 0-2.043 1.07-3.049 1.45-3.464.38-.415.83-.519 1.107-.519h.795c.254 0 .6.095.913.726l1.31 3.089c.164.39.275.843.027 1.235l-.69 1.028c-.207.31-.29.46-.14.717.34.586 1.43 2.105 3.07 3.412 1.705 1.368 3.15 1.8 3.72 2 .29.1.642.073.878-.163l.806-.9c.254-.291.634-.46 1.022-.364l3.027.706c.572.134.86.534.86.994v1.179c0 .415-.062.945-.511 1.526z"/></svg></a>
-
-  <script src="../assets/base.js?v=4" defer></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Store",
-    "@id": "https://roopix.in/beauty/#store",
-    "name": "ROOPIX Beauty",
-    "description": "Cosmetics, skincare and beauty essentials in Joya, Uttar Pradesh, from brands including Swiss Beauty, MARS, Insight, Lakmé and Nykaa.",
-    "url": "https://roopix.in/beauty/",
-    "logo": "https://roopix.in/assets/logo.webp",
-    "image": "https://roopix.in/assets/og-image.jpg",
-    "telephone": "+91-96391-60626",
-    "email": "roopix.in@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Sheesh Mahal Building, Ikonda Road",
-      "addressLocality": "Joya, Amroha",
-      "addressRegion": "Uttar Pradesh",
-      "postalCode": "244221",
-      "addressCountry": "IN"
-    },
-    "parentOrganization": { "@type": "Organization", "name": "ROOPIX", "url": "https://roopix.in/" },
-    "sameAs": ["https://www.instagram.com/roopix.in"]
-  }
-  </script>
-</body>
-</html>
+              <!-- OWNER
