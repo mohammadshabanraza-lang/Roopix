@@ -1,5 +1,5 @@
-/* ============================================================
-   ROOPIX Exports — owner-editable content (no coding needed)
+* ============================================================
+   ROOPIX Exports â€” owner-editable content (no coding needed)
    ============================================================ */
 
 /* 1. CONTACT + CATALOGUE SETTINGS */
