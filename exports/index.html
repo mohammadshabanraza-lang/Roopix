@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>document.documentElement.className += ' js';</script>
+  <script>document.documentElement.className+=' js'+(matchMedia('(prefers-reduced-motion: reduce)').matches?'':' motion-on')+(/\/beauty\//.test(location.pathname)?' pg-beauty':/\/exports\//.test(location.pathname)?' pg-exports':' pg-home');setTimeout(function(){if(!window.__roopixBase){var r=document.documentElement;r.className=r.className.replace(/\b(js|motion-on|mx-ready)\b/g,'')}},4000);</script>
   <title>ROOPIX Exports — Indian Handicrafts &amp; Metalware Sourcing</title>
   <meta name="description" content="ROOPIX Exports is an exporter and sourcing partner for Indian handicrafts and metalware, including bird feeders, trays, bowls and decorative products. Request a quote for your requirements." />
   <meta name="keywords" content="ROOPIX Exports, Indian handicrafts, metalware, bird feeders, metal trays, bowls, decorative products, export sourcing India" />
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="ROOPIX Exports — Indian Craftsmanship. Global Reach." />
   <meta name="twitter:description" content="Exporter and sourcing partner for Indian handicrafts and metalware. Request a quote." />
   <meta name="twitter:image" content="https://roopix.in/assets/og-exports.jpg" />
-  <link rel="icon" type="image/webp" href="../assets/favicon.webp" />
+  <link rel="icon" type="image/webp" href="../assets/logo.webp" />
   <link rel="apple-touch-icon" href="../assets/logo.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,6 +31,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" /></noscript>
   <link rel="stylesheet" href="../assets/base.css?v=4" />
   <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="../assets/motion.css?v=5" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -90,7 +91,7 @@
             <p>Product focus</p>
             <ul><li>Bird Feeders</li><li>Metalware &amp; Trays</li><li>Bowls</li><li>Handicrafts</li><li>Decorative Products</li></ul>
           </div>
-          <img src="../assets/exports/hero-exports.webp" alt="Indian metalware and handicraft products sourced by ROOPIX Exports" width="1400" height="1200" fetchpriority="high" onerror="this.hidden=true" />
+          <img src="../assets/exports/hero-exports-banner.webp" alt="Indian metalware and handicraft products sourced by ROOPIX Exports" width="1448" height="1086" fetchpriority="high" onerror="this.hidden=true" />
         </figure>
       </div>
     </section>
@@ -292,7 +293,7 @@
   <a class="float-wa" href="https://wa.me/919639160626?text=Hello%20ROOPIX%20Exports%2C%20I%27d%20like%20to%20discuss%20my%20requirements." target="_blank" rel="noopener" aria-label="Chat with ROOPIX Exports on WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" width="28" height="28" aria-hidden="true"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.733 5.47 2.018 7.773L0 32l8.418-2.211A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.26 22.26c-.35.985-2.044 1.876-2.823 1.997-.72.113-1.63.16-2.631-.165-.607-.2-1.386-.468-2.38-.916-4.183-1.808-6.913-6.01-7.12-6.287-.207-.276-1.69-2.248-1.69-4.291 0-2.043 1.07-3.049 1.45-3.464.38-.415.83-.519 1.107-.519h.795c.254 0 .6.095.913.726l1.31 3.089c.164.39.275.843.027 1.235l-.69 1.028c-.207.31-.29.46-.14.717.34.586 1.43 2.105 3.07 3.412 1.705 1.368 3.15 1.8 3.72 2 .29.1.642.073.878-.163l.806-.9c.254-.291.634-.46 1.022-.364l3.027.706c.572.134.86.534.86.994v1.179c0 .415-.062.945-.511 1.526z"/></svg></a>
 
   <script src="catalogue-data.js?v=4" defer></script>
-  <script src="../assets/base.js?v=4" defer></script>
+  <script src="../assets/base.js?v=5" defer></script>
   <script src="script.js?v=4" defer></script>
   <script type="application/ld+json">
   {
@@ -317,5 +318,6 @@
     "sameAs": ["https://www.instagram.com/roopix.in"]
   }
   </script>
+  <script src="../assets/motion.js?v=6" defer></script>
 </body>
 </html>
