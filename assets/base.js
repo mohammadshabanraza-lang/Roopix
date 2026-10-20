@@ -2,6 +2,7 @@
    floating-button hiding, dialogs. No dependencies. */
 (function () {
   'use strict';
+  window.__roopixBase = true; // lets the inline head failsafe know shared scripts loaded
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
