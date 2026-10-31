@@ -81,9 +81,19 @@
   function selectProduct(value) {
     if (!productSelect) return;
     for (var i = 0; i < productSelect.options.length; i++) {
-      if (productSelect.options[i].text === value) { productSelect.selectedIndex = i; return; }
+      if (productSelect.options[i].text === value || productSelect.options[i].value === value) {
+        productSelect.selectedIndex = i;
+        return;
+      }
     }
   }
+
+  /* Cinematic collection cards can pre-select the matching enquiry category. */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-enquiry-category]'), function (link) {
+    link.addEventListener('click', function () {
+      selectProduct(link.getAttribute('data-enquiry-category'));
+    });
+  });
 
   /* ---------- Enquiry form ---------- */
   var form = $('#enquiryForm');
