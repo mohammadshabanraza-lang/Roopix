@@ -26,7 +26,9 @@ window.ROOPIX_EXPORTS_CONFIG = {
  *   alt: 'Describe the actual product photograph',
  *   material: '',
  *   dimensions: '',
+ *   weight: '',
  *   finish: '',
+ *   packaging: '',
  *   customisation: ''
  * }
  *
