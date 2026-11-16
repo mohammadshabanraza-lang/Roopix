@@ -28,12 +28,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="preload" as="image" href="../assets/exports/bird-feeder-sequence/birdfeeder-045.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="../assets/exports/exports-cover.webp" fetchpriority="high" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" /></noscript>
   <link rel="stylesheet" href="../assets/base.css?v=5" />
   <link rel="stylesheet" href="style.css?v=6" />
   <link rel="stylesheet" href="../assets/motion.css?v=6" />
+  <link rel="stylesheet" href="../assets/roopix-effects.css?v=1" />
 </head>
 <body class="exports-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -73,68 +74,46 @@
   </div>
 
   <main id="main">
-    <!-- CINEMATIC PRODUCT STORY: the Canvas sequence is progressive enhancement.
-         The poster image and copy remain available if JavaScript or the CDN is unavailable. -->
-    <section class="x-story" id="feeder-story" aria-label="ROOPIX Exports bird feeder visual story">
-      <div class="x-story__stage" id="feederStoryStage">
-        <div class="x-story__visual" aria-hidden="true">
-          <img class="x-story__poster" src="../assets/exports/bird-feeder-sequence/birdfeeder-045.webp" alt="" width="2752" height="1536" fetchpriority="high" />
-          <canvas class="x-story__canvas" id="feederSequenceCanvas" width="1440" height="900"></canvas>
-          <div class="x-story__shade"></div>
-          <div class="x-story__grain"></div>
+    <!-- PARALLAX HERO: a layered photographic composition, not a 360-degree product viewer. -->
+    <section class="x-parallax-hero" id="exportsHero" data-parallax data-parallax-distance="148" data-parallax-mobile-distance="60" data-parallax-runway="430" data-parallax-mobile-runway="210" data-parallax-pointer="0.55" aria-labelledby="exportsHeroTitle">
+      <div class="x-parallax-layer x-parallax-layer--back" data-parallax-speed="0.55" aria-hidden="true">
+        <img src="../assets/exports/exports-cover.webp" alt="" width="1448" height="1086" fetchpriority="high" />
+      </div>
+      <div class="x-parallax-layer x-parallax-layer--wash" data-parallax-speed="0.78" aria-hidden="true"></div>
+      <div class="x-parallax-layer x-parallax-layer--detail" data-parallax-speed="1.48" data-parallax-scale="1.035" data-parallax-rotate="-1.2" aria-hidden="true">
+        <figure class="x-parallax-frame">
+          <div class="x-parallax-frame__media" data-clip-reveal data-reveal-direction="left">
+            <img src="../assets/exports/hero-exports-banner.webp" alt="Metal bird feeders photographed in a garden setting" width="1448" height="1086" />
+          </div>
+          <figcaption>HOME &amp; GARDEN <span>INDIA</span></figcaption>
+        </figure>
+      </div>
+      <div class="x-parallax-layer x-parallax-layer--content" data-parallax-speed="1.12">
+        <div class="container x-parallax-content">
+          <div class="x-parallax-copy">
+            <p class="x-eyebrow"><span class="x-eyebrow__line"></span> ROOPIX ENTERPRISES <span class="x-eyebrow__slash">/</span> EXPORTS</p>
+            <h1 id="exportsHeroTitle">Indian<br />Craftsmanship.<br /><em>Global Reach.</em></h1>
+            <p class="x-parallax-lead">Connecting international buyers with carefully sourced Indian metalware, handicrafts, bird feeders, wooden serving products and decorative home and garden items.</p>
+            <div class="x-parallax-actions">
+              <a class="x-btn x-btn--gold" href="#products">Explore our products <span aria-hidden="true">↗</span></a>
+              <a class="x-text-link" href="#enquiry">Request a quote <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
         </div>
-
-        <div class="x-story__inner container">
-          <div class="x-story__copy-stack">
-            <div class="x-story__copy x-story__copy--one" data-story-copy="one">
-              <p class="x-eyebrow"><span class="x-eyebrow__line"></span> ROOPIX ENTERPRISES <span class="x-eyebrow__slash">/</span> EXPORTS</p>
-              <h1 id="heroTitle">Indian<br />Craftsmanship.<br /><em>Global Reach.</em></h1>
-              <p class="x-story__lead">Connecting international buyers with carefully sourced Indian metalware, handicrafts, bird feeders, wooden serving products and decorative home and garden items.</p>
-              <div class="x-story__actions">
-                <a class="x-btn x-btn--gold" href="#products">Explore our products <span aria-hidden="true">↗</span></a>
-                <a class="x-text-link" href="#enquiry">Request a quote <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-
-            <div class="x-story__copy x-story__copy--two" data-story-copy="two">
-              <p class="x-eyebrow"><span class="x-eyebrow__line"></span> THE PRODUCT STUDY <span class="x-eyebrow__slash">/</span> 01</p>
-              <h2>A closer look<br />at <em>the form.</em></h2>
-              <p class="x-story__lead">Explore a bird-feeder concept through a sequence of considered viewpoints, presented in a cinematic product study.</p>
-              <a class="x-text-link" href="#products">Explore the collection <span aria-hidden="true">→</span></a>
-            </div>
-
-            <div class="x-story__copy x-story__copy--three" data-story-copy="three">
-              <p class="x-eyebrow"><span class="x-eyebrow__line"></span> SOURCING WITH CLARITY <span class="x-eyebrow__slash">/</span> INDIA</p>
-              <h2>Considered<br /><em>from enquiry to order.</em></h2>
-              <p class="x-story__lead">We work with supplier partners to confirm specifications, finishes, quantities and order requirements before coordinating quality checks, packaging and export logistics.</p>
-              <a class="x-text-link" href="#process">Discover our process <span aria-hidden="true">→</span></a>
-            </div>
-          </div>
-
-          <div class="x-story__meta" aria-hidden="true">
-            <span class="x-story__meta-label">ILLUSTRATIVE PRODUCT VISUAL</span>
-            <span class="x-story__meta-rule"></span>
-            <span class="x-story__angle" id="feederAngle">045°</span>
-          </div>
-
-          <div class="x-story__bottom">
-            <div class="x-story__scroll-cue"><span class="x-story__mouse"><i></i></span><span>Scroll to explore</span></div>
-            <div class="x-story__progress" role="progressbar" aria-label="Bird feeder visual sequence" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="feederProgress">
-              <span class="x-story__progress-fill" id="feederProgressFill"></span>
-            </div>
-            <span class="x-story__sequence-label">PRODUCT STORY <span>01 — 03</span></span>
-          </div>
-          <p class="visually-hidden">Illustrative bird-feeder visual. Product designs, materials, finishes and specifications are confirmed individually during enquiry.</p>
-        </div>
+      </div>
+      <div class="x-parallax-bottom" aria-hidden="true">
+        <span>SCROLL TO EXPLORE</span>
+        <span class="x-parallax-progress"><i data-parallax-fill></i></span>
+        <span>ROOPIX EXPORTS <b> / </b> INDIA</span>
       </div>
     </section>
 
     <section class="x-proof" aria-label="ROOPIX Exports at a glance">
       <div class="container x-proof__inner">
-        <p><span>01</span> Indian handicrafts &amp; metalware</p>
-        <p><span>02</span> Sourced through supplier partners</p>
-        <p><span>03</span> Specifications confirmed per order</p>
-        <p><span>04</span> Joya, Uttar Pradesh, India</p>
+        <p class="rx-reveal-up"><span>01</span> Indian handicrafts &amp; metalware</p>
+        <p class="rx-reveal-up"><span>02</span> Sourced through supplier partners</p>
+        <p class="rx-reveal-up"><span>03</span> Specifications confirmed per order</p>
+        <p class="rx-reveal-up"><span>04</span> Joya, Uttar Pradesh, India</p>
       </div>
     </section>
 
@@ -377,8 +356,8 @@
   <script src="catalogue-data.js?v=5" defer></script>
   <script src="../assets/base.js?v=5" defer></script>
   <script src="script.js?v=5" defer></script>
-  <script src="scroll-experience.js?v=1" defer></script>
   <script src="../assets/motion.js?v=7" defer></script>
+  <script src="../assets/roopix-effects.js?v=1" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
