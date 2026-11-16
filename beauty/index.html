@@ -3,28 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>document.documentElement.className+=' js'+(matchMedia('(prefers-reduced-motion: reduce)').matches?'':' motion-on')+(/\/beauty\//.test(location.pathname)?' pg-beauty':/\/exports\//.test(location.pathname)?' pg-exports':' pg-home');setTimeout(function(){if(!window.__roopixBase){var r=document.documentElement;r.className=r.className.replace(/\b(js|motion-on|mx-ready)\b/g,'')}},4000);</script>
+  <script>document.documentElement.classList.add("js");document.documentElement.classList.add(/\/beauty\//.test(location.pathname)?"pg-beauty":/\/exports\//.test(location.pathname)?"pg-exports":"pg-home");setTimeout(function(){if(!window.__roopixBase){document.documentElement.classList.remove("js");}},4000);</script>
   <title>ROOPIX Beauty — Beauty, Redefined | Joya, Uttar Pradesh</title>
   <meta name="description" content="ROOPIX Beauty: makeup, skincare and beauty essentials from Swiss Beauty, MARS, Insight, Lakmé and Nykaa. Shop on our online store, order on WhatsApp or visit us in Joya, Amroha." />
   <meta name="keywords" content="ROOPIX Beauty, makeup, skincare, cosmetics, Swiss Beauty, MARS, Lakmé, Nykaa, Joya, Amroha" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="ROOPIX" />
-  <meta name="theme-color" content="#0B0B0B" />
+  <meta name="theme-color" content="#f6f0eb" />
+  <meta name="color-scheme" content="light" />
   <link rel="canonical" href="https://roopix.in/beauty/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="ROOPIX" />
   <meta property="og:title" content="ROOPIX Beauty — Beauty, Redefined" />
   <meta property="og:description" content="Makeup, skincare and beauty essentials. Shop online, order on WhatsApp or visit us in Joya." />
   <meta property="og:url" content="https://roopix.in/beauty/" />
-  <meta property="og:image" content="https://roopix.in/assets/og-image.jpg" />
+  <meta property="og:image" content="https://roopix.in/assets/og-beauty.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ROOPIX Beauty — Beauty, Redefined" />
   <meta name="twitter:description" content="Makeup, skincare and beauty essentials. Shop online, order on WhatsApp or visit us in Joya." />
-  <meta name="twitter:image" content="https://roopix.in/assets/og-image.jpg" />
-  <link rel="icon" type="image/webp" href="../assets/logo.webp" />
-  <link rel="apple-touch-icon" href="../assets/logo.webp" />
+  <meta name="twitter:image" content="https://roopix.in/assets/og-beauty.jpg" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="alternate icon" type="image/png" href="../assets/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="image" href="../assets/hero-banner.webp" fetchpriority="high" />
@@ -32,14 +34,14 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" /></noscript>
   <link rel="stylesheet" href="../assets/base.css?v=4" />
   <link rel="stylesheet" href="style.css?v=4" />
-  <link rel="stylesheet" href="../assets/motion.css?v=5" />
-  <link rel="stylesheet" href="../assets/roopix-effects.css?v=1" />
+  <link rel="stylesheet" href="../assets/roopix-effects.css?v=2" />
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" defer></script>
   <script src="../assets/base.js?v=5" defer></script>
-  <script src="../assets/motion.js?v=6" defer></script>
-  <script src="../assets/roopix-effects.js?v=1" defer></script>
+  <script src="../assets/roopix-effects.js?v=2" defer></script>
+  <link rel="stylesheet" href="../assets/premium.css?v=2" />
+  <link rel="stylesheet" href="../assets/refinements.css?v=1" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -92,7 +94,7 @@
         <div class="b-hero-copy rx-reveal-up">
           <p class="eyebrow">ROOPIX Beauty · Joya, Uttar Pradesh</p>
           <h1 id="heroTitle">Beauty,<br /><em>Redefined.</em></h1>
-          <p class="lead">Makeup, skincare and beauty essentials, chosen with care. Shop on our online store, order on WhatsApp, or visit us in Joya.</p>
+          <p class="lead">A multi-brand beauty destination for makeup, skincare and everyday essentials. Explore the online store, ask our team for product guidance or visit us in Joya.</p>
           <ul class="hero-points" aria-label="Ways to shop">
             <li>Online store</li>
             <li>WhatsApp ordering</li>
@@ -158,24 +160,24 @@
         </div>
         <div class="cat-grid">
           <a class="cat-card reveal lips" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Lips%20collection!" target="_blank" rel="noopener" aria-label="Lips: lipsticks, glosses and liners. Opens WhatsApp">
-            <span class="cat-media" data-clip-reveal data-reveal-direction="up"><img src="../assets/lips-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" /></span>
-            <span class="cat-body"><strong>Lips</strong><span>Lipsticks, Glosses &amp; Liners</span><i aria-hidden="true">→</i></span>
+            <span class="cat-visual cat-visual--lips" aria-hidden="true"><span class="cat-visual__orb"></span><span class="cat-visual__icon"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M18 67c13-18 26-27 42-27s29 9 42 27c-13 16-27 24-42 24S31 83 18 67Z"/><path d="M18 67c15 2 28 8 42 8s27-6 42-8M60 40c-4-8-14-11-22-5-7 5-8 14-2 21M60 40c4-8 14-11 22-5 7 5 8 14 2 21"/><path d="M43 74c5 4 11 6 17 6s12-2 17-6"/></svg></span><span class="cat-visual__index">ROOPIX BEAUTY</span></span>
+            <span class="cat-body"><strong>Lips</strong><span>Lipsticks, gloss and lip essentials</span><i aria-hidden="true">→</i></span>
           </a>
           <a class="cat-card reveal face" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Face%20Makeup%20collection!" target="_blank" rel="noopener" aria-label="Face makeup: foundation, blush and highlighter. Opens WhatsApp">
-            <span class="cat-media" data-clip-reveal data-reveal-direction="up"><img src="../assets/face-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" /></span>
-            <span class="cat-body"><strong>Face Makeup</strong><span>Foundation, Blush &amp; Highlighter</span><i aria-hidden="true">→</i></span>
+            <span class="cat-visual cat-visual--face" aria-hidden="true"><span class="cat-visual__orb"></span><span class="cat-visual__icon"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M60 17c-22 0-37 17-37 42 0 28 16 46 37 46s37-18 37-46C97 34 82 17 60 17Z"/><path d="M43 57c4-4 9-4 13 0M64 57c4-4 9-4 13 0M52 76c5 4 11 4 16 0"/><path d="M27 46c2-15 14-27 33-27s31 12 33 27M33 88l-9 10M87 88l9 10"/></svg></span><span class="cat-visual__index">ROOPIX BEAUTY</span></span>
+            <span class="cat-body"><strong>Face Makeup</strong><span>Foundation, complexion and finishing products</span><i aria-hidden="true">→</i></span>
           </a>
           <a class="cat-card reveal eye" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Eye%20Makeup%20collection!" target="_blank" rel="noopener" aria-label="Eye makeup: kajal, mascara and eyeshadow. Opens WhatsApp">
-            <span class="cat-media" data-clip-reveal data-reveal-direction="up"><img src="../assets/eye-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" /></span>
-            <span class="cat-body"><strong>Eye Makeup</strong><span>Kajal, Mascara &amp; Eyeshadow</span><i aria-hidden="true">→</i></span>
+            <span class="cat-visual cat-visual--eye" aria-hidden="true"><span class="cat-visual__orb"></span><span class="cat-visual__icon"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M12 61s17-27 48-27 48 27 48 27-17 27-48 27-48-27-48-27Z"/><circle cx="60" cy="61" r="15"/><circle cx="60" cy="61" r="5"/><path d="m29 44-7-9m19 1-3-12m54 20 7-9m-19 1 3-12"/></svg></span><span class="cat-visual__index">ROOPIX BEAUTY</span></span>
+            <span class="cat-body"><strong>Eye Makeup</strong><span>Kajal, mascara and eye colour</span><i aria-hidden="true">→</i></span>
           </a>
           <a class="cat-card reveal skin" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Skincare%20collection!" target="_blank" rel="noopener" aria-label="Skincare: serums, moisturisers and SPF. Opens WhatsApp">
-            <span class="cat-media" data-clip-reveal data-reveal-direction="up"><img src="../assets/skincare-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" /></span>
-            <span class="cat-body"><strong>Skincare</strong><span>Serums, Moisturisers &amp; SPF</span><i aria-hidden="true">→</i></span>
+            <span class="cat-visual cat-visual--skin" aria-hidden="true"><span class="cat-visual__orb"></span><span class="cat-visual__icon"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M60 99c-21-12-31-28-31-47 0-15 8-26 20-26 7 0 12 5 11 13 2-8 8-13 15-13 12 0 20 11 20 26 0 19-13 35-35 47Z"/><path d="M60 99V45M60 70c-12-10-20-17-26-29M60 81c11-10 20-18 27-30"/></svg></span><span class="cat-visual__index">ROOPIX BEAUTY</span></span>
+            <span class="cat-body"><strong>Skincare</strong><span>Cleansers, serums and daily care</span><i aria-hidden="true">→</i></span>
           </a>
           <a class="cat-card reveal acc" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Accessories%20collection!" target="_blank" rel="noopener" aria-label="Accessories: brushes, tools and pouches. Opens WhatsApp">
-            <span class="cat-media" data-clip-reveal data-reveal-direction="up"><img src="../assets/accessories-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" /></span>
-            <span class="cat-body"><strong>Accessories</strong><span>Brushes, Tools &amp; Pouches</span><i aria-hidden="true">→</i></span>
+            <span class="cat-visual cat-visual--acc" aria-hidden="true"><span class="cat-visual__orb"></span><span class="cat-visual__icon"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M25 25h70v70H25z"/><path d="M38 82 51 40l9 25 9-25 13 42M39 91h42"/><circle cx="60" cy="28" r="5"/></svg></span><span class="cat-visual__index">ROOPIX BEAUTY</span></span>
+            <span class="cat-body"><strong>Accessories</strong><span>Brushes, tools and beauty essentials</span><i aria-hidden="true">→</i></span>
           </a>
         </div>
         <div class="cat-more reveal">
@@ -194,16 +196,16 @@
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Curated for You</p>
-          <h2 class="section-title">Brands available <em>now</em></h2>
-          <p class="section-sub">Stock changes, so message us to check a specific product before you visit.</p>
+          <h2 class="section-title">Brands featured <em>at ROOPIX</em></h2>
+          <p class="section-sub">Product range and availability can change. Check the online store or contact us before visiting for a specific item.</p>
         </div>
         <!-- OWNER: only list brands you currently stock. NARS, MAC, Forever 52 and GUESS were removed until confirmed. -->
-        <ul class="brand-grid reveal">
-          <li class="brand-card rx-reveal-up"><img src="../assets/brand-swiss.webp" alt="Swiss Beauty" height="50" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><span class="brand-name" hidden>Swiss Beauty</span></li>
-          <li class="brand-card rx-reveal-up"><img src="../assets/brand-mars.webp" alt="MARS" height="50" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><span class="brand-name" hidden>MARS</span></li>
-          <li class="brand-card rx-reveal-up"><span class="brand-name">Insight</span></li>
-          <li class="brand-card rx-reveal-up"><span class="brand-name">Lakmé</span></li>
-          <li class="brand-card rx-reveal-up"><img src="../assets/brand-nykaa.webp" alt="Nykaa" height="50" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><span class="brand-name" hidden>Nykaa</span></li>
+        <ul class="brand-grid reveal" aria-label="Beauty brands featured at ROOPIX">
+          <li class="brand-card brand-card--swiss"><span class="brand-wordmark">SWISS <b>BEAUTY</b></span><span class="brand-note">Beauty essentials</span></li>
+          <li class="brand-card brand-card--mars"><span class="brand-wordmark">MARS</span><span class="brand-note">Cosmetics</span></li>
+          <li class="brand-card brand-card--insight"><span class="brand-wordmark">INSIGHT</span><span class="brand-note">Make-up essentials</span></li>
+          <li class="brand-card brand-card--lakme"><span class="brand-wordmark">LAKMÉ</span><span class="brand-note">Beauty &amp; care</span></li>
+          <li class="brand-card brand-card--nykaa"><span class="brand-wordmark">Nykaa</span><span class="brand-note">Beauty</span></li>
         </ul>
       </div>
     </section>
@@ -255,6 +257,36 @@
       </div>
     </section>
 
+    <!-- CUSTOMER CLARITY -->
+    <section class="section b-trust" aria-labelledby="bTrustTitle">
+      <div class="container">
+        <div class="b-trust-intro reveal">
+          <p class="eyebrow">A better way to shop</p>
+          <h2 class="section-title" id="bTrustTitle">Personal service.<br /><em>Clear information.</em></h2>
+          <p>Explore the online store, ask about a product before ordering, or visit the ROOPIX outlet in Joya. Product availability, variants and delivery options are confirmed at the time of enquiry.</p>
+        </div>
+        <div class="b-trust-grid">
+          <article class="b-trust-card reveal"><span>01 / DISCOVER</span><h3>Browse with confidence</h3><p>Explore the brands and beauty categories represented in our store.</p></article>
+          <article class="b-trust-card reveal"><span>02 / ASK</span><h3>Get personal guidance</h3><p>Contact us to check current stock, shade options, prices and product details.</p></article>
+          <article class="b-trust-card reveal"><span>03 / CHOOSE</span><h3>Shop your way</h3><p>Continue through our online store, arrange an order on WhatsApp or visit us in person.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section b-faq" id="beauty-faq" aria-labelledby="bFaqTitle">
+      <div class="container b-faq-grid">
+        <div class="reveal"><p class="eyebrow">Helpful information</p><h2 class="section-title" id="bFaqTitle">Before you <em>shop.</em></h2><p class="section-sub">A few practical answers to help you choose the right way to shop with ROOPIX Beauty.</p>
+          <a class="b-faq-contact" href="https://wa.me/919639160626" target="_blank" rel="noopener">Still have a question? Talk to us <span aria-hidden="true">↗</span></a></div>
+        <div class="b-faq-list reveal">
+          <details><summary>How can I check whether a product is available?</summary><p>Product availability can change. Please check the online store or message ROOPIX on WhatsApp before placing an order.</p></details>
+          <details><summary>Can I ask about shades or product suitability?</summary><p>Yes. Share the product you are considering and the shade or finish you prefer. Our team can help with the information available to us.</p></details>
+          <details><summary>Can I shop online?</summary><p>Yes. The Online Store button opens the ROOPIX store hosted by our commerce platform. Store checkout, payment and order terms are presented on that platform.</p></details>
+          <details><summary>Can I visit the physical store?</summary><p>Yes. The ROOPIX outlet is listed at Sheesh Mahal Building, Ikonda Road, Joya, Amroha, Uttar Pradesh. Please contact us to confirm current store hours before travelling.</p></details>
+          <details><summary>How do I ask about delivery, returns or refunds?</summary><p>Please review the applicable terms shown during checkout on the online store, or contact ROOPIX before purchasing. The applicable seller and order terms govern each purchase.</p></details>
+        </div>
+      </div>
+    </section>
+
     <!-- STORE -->
     <section id="store" class="section b-store">
       <div class="container">
@@ -274,4 +306,69 @@
             </div>
             <div class="store-detail">
               <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-              <!-- OWNER
+              <div><strong>Store hours</strong><p>Please message or call us to confirm current opening hours before visiting.</p></div>
+            </div>
+            <div class="store-detail">
+              <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
+              <div><strong>Email</strong><p><a href="mailto:roopix.in@gmail.com">roopix.in@gmail.com</a></p></div>
+            </div>
+            <div class="store-actions">
+              <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=ROOPIX%2C%20Sheesh%20Mahal%20Building%2C%20Ikonda%20Road%2C%20Joya%2C%20Amroha%2C%20Uttar%20Pradesh%20244221" target="_blank" rel="noopener">Get directions <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-ghost" href="https://wa.me/919639160626?text=Hello%20ROOPIX%2C%20please%20confirm%20your%20store%20hours." target="_blank" rel="noopener">Confirm store hours</a>
+            </div>
+          </div>
+          <a class="store-photo" href="https://www.google.com/maps/search/?api=1&amp;query=ROOPIX%2C%20Sheesh%20Mahal%20Building%2C%20Ikonda%20Road%2C%20Joya%2C%20Amroha%2C%20Uttar%20Pradesh%20244221" target="_blank" rel="noopener" aria-label="Find ROOPIX on Google Maps">
+            <img src="../assets/store-banner.webp" alt="ROOPIX store and beauty retail display" width="1099" height="1431" loading="lazy" />
+            <span>ROOPIX · JOYA, INDIA <b>OPEN MAP ↗</b></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section b-contact" aria-labelledby="beautyContactTitle">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">We're easy to reach</p><h2 class="section-title" id="beautyContactTitle">Your next beauty find<br /><em>starts with a conversation.</em></h2></div>
+        <div class="contact-grid">
+          <a class="contact-card reveal" href="https://wa.me/919639160626" target="_blank" rel="noopener"><strong>WhatsApp</strong><span>+91 96391 60626</span></a>
+          <a class="contact-card reveal" href="mailto:roopix.in@gmail.com"><strong>Email</strong><span>roopix.in@gmail.com</span></a>
+          <a class="contact-card reveal" href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener"><strong>Online store</strong><span>Browse ROOPIX</span></a>
+          <a class="contact-card reveal" href="../policies/"><strong>Information</strong><span>Policies &amp; privacy</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <img class="footer-logo" src="../assets/logo.webp" alt="ROOPIX" />
+        <p class="footer-tagline">Beauty, redefined.</p>
+        <p class="footer-desc">Makeup, skincare and beauty essentials with personal guidance online, over WhatsApp and at our Joya store.</p>
+        <p class="footer-email"><a href="mailto:roopix.in@gmail.com">roopix.in@gmail.com</a></p>
+        <div class="footer-social"><a href="https://www.instagram.com/roopix.in" target="_blank" rel="noopener" aria-label="ROOPIX on Instagram">Instagram ↗</a></div>
+      </div>
+      <div><h2>Discover</h2><ul><li><a href="#categories">Shop by category</a></li><li><a href="#brands">Brands</a></li><li><a href="#why-us">Why ROOPIX</a></li><li><a href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener">Online store</a></li></ul></div>
+      <div><h2>Visit &amp; support</h2><ul><li><a href="#store">Our store</a></li><li><a href="#beauty-faq">FAQs</a></li><li><a href="https://wa.me/919639160626" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="../">ROOPIX Home</a></li><li><a href="../exports/">ROOPIX Exports</a></li></ul></div>
+      <div><h2>Information</h2><ul><li><a href="../policies/">Privacy &amp; website terms</a></li><li><a href="mailto:roopix.in@gmail.com">Email ROOPIX</a></li><li><a href="tel:+919639160626">+91 96391 60626</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© <span data-year>2026</span> ROOPIX Beauty. All rights reserved.</p><p>Sheesh Mahal Building, Ikonda Road, Joya, Amroha, Uttar Pradesh 244221, India</p></div>
+  </footer>
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
+  <a class="float-wa" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20know%20more%20about%20Beauty." target="_blank" rel="noopener" aria-label="Chat with ROOPIX Beauty on WhatsApp">↗</a>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "@id": "https://roopix.in/beauty/#store",
+    "name": "ROOPIX Beauty",
+    "url": "https://roopix.in/beauty/",
+    "image": "https://roopix.in/assets/store-banner.webp",
+    "email": "roopix.in@gmail.com",
+    "telephone": "+91-96391-60626",
+    "address": {"@type":"PostalAddress","streetAddress":"Sheesh Mahal Building, Ikonda Road","addressLocality":"Joya, Amroha","addressRegion":"Uttar Pradesh","postalCode":"244221","addressCountry":"IN"},
+    "parentOrganization": {"@type":"Organization","name":"ROOPIX","url":"https://roopix.in/"},
+    "sameAs": ["https://www.instagram.com/roopix.in"]
+  }
+  </script>
+</body>
+</html>
