@@ -11,10 +11,11 @@
 .division-card{position:relative;display:flex;align-items:flex-end;min-height:clamp(260px,46vh,500px);overflow:hidden;border:1px solid var(--border);isolation:isolate;transition:border-color .4s}
 .division-beauty{background:linear-gradient(135deg,#1a0a10,#3a1226)}
 .division-exports{background:linear-gradient(135deg,#1d1a17,#4a3520)}
-.division-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.division-card .division-media{position:absolute;inset:0;z-index:-2;overflow:hidden;display:block}
+.division-card .division-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .division-card::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(8,8,8,.94) 0%,rgba(8,8,8,.55) 55%,rgba(8,8,8,.15) 100%)}
 .division-card:hover{border-color:var(--accent)}
-.division-card:hover img{transform:scale(1.04)}
+.division-card:hover .division-media img{transform:scale(1.04)}
 .division-body{padding:clamp(1.25rem,3vw,2.25rem);width:100%}
 .division-label{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:.5rem}
 .division-card h2{font-family:var(--font-display);font-weight:300;font-size:clamp(2rem,3.4vw,2.9rem);line-height:1.05}
