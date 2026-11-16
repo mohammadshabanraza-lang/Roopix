@@ -34,6 +34,8 @@
       var card = el('article', 'product-card');
       card.dataset.category = p.category || '';
       var media = el('div', 'product-media');
+      media.setAttribute('data-clip-reveal', '');
+      media.setAttribute('data-reveal-direction', 'up');
       var img = el('img');
       img.src = p.image; img.alt = p.alt || p.name; img.loading = 'lazy'; img.width = 800; img.height = 600;
       img.addEventListener('error', function () { card.hidden = true; });
