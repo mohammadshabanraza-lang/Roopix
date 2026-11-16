@@ -33,6 +33,13 @@
   <link rel="stylesheet" href="../assets/base.css?v=4" />
   <link rel="stylesheet" href="style.css?v=4" />
   <link rel="stylesheet" href="../assets/motion.css?v=5" />
+  <link rel="stylesheet" href="../assets/roopix-effects.css?v=1" />
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="../assets/base.js?v=5" defer></script>
+  <script src="../assets/motion.js?v=6" defer></script>
+  <script src="../assets/roopix-effects.js?v=1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -82,7 +89,7 @@
     <!-- HERO -->
     <section class="b-hero" aria-labelledby="heroTitle">
       <div class="container b-hero-grid">
-        <div class="b-hero-copy">
+        <div class="b-hero-copy rx-reveal-up">
           <p class="eyebrow">ROOPIX Beauty · Joya, Uttar Pradesh</p>
           <h1 id="heroTitle">Beauty,<br /><em>Redefined.</em></h1>
           <p class="lead">Makeup, skincare and beauty essentials, chosen with care. Shop on our online store, order on WhatsApp, or visit us in Joya.</p>
@@ -151,23 +158,23 @@
         </div>
         <div class="cat-grid">
           <a class="cat-card reveal lips" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Lips%20collection!" target="_blank" rel="noopener" aria-label="Lips: lipsticks, glosses and liners. Opens WhatsApp">
-            <img src="../assets/lips-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" />
+            <span class="cat-media" data-clip-reveal data-reveal-direction="up"><img src="../assets/lips-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" /></span>
             <span class="cat-body"><strong>Lips</strong><span>Lipsticks, Glosses &amp; Liners</span><i aria-hidden="true">→</i></span>
           </a>
           <a class="cat-card reveal face" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Face%20Makeup%20collection!" target="_blank" rel="noopener" aria-label="Face makeup: foundation, blush and highlighter. Opens WhatsApp">
-            <img src="../assets/face-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" />
+            <span class="cat-media" data-clip-reveal data-reveal-direction="up"><img src="../assets/face-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" /></span>
             <span class="cat-body"><strong>Face Makeup</strong><span>Foundation, Blush &amp; Highlighter</span><i aria-hidden="true">→</i></span>
           </a>
           <a class="cat-card reveal eye" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Eye%20Makeup%20collection!" target="_blank" rel="noopener" aria-label="Eye makeup: kajal, mascara and eyeshadow. Opens WhatsApp">
-            <img src="../assets/eye-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" />
+            <span class="cat-media" data-clip-reveal data-reveal-direction="up"><img src="../assets/eye-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" /></span>
             <span class="cat-body"><strong>Eye Makeup</strong><span>Kajal, Mascara &amp; Eyeshadow</span><i aria-hidden="true">→</i></span>
           </a>
           <a class="cat-card reveal skin" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Skincare%20collection!" target="_blank" rel="noopener" aria-label="Skincare: serums, moisturisers and SPF. Opens WhatsApp">
-            <img src="../assets/skincare-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" />
+            <span class="cat-media" data-clip-reveal data-reveal-direction="up"><img src="../assets/skincare-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" /></span>
             <span class="cat-body"><strong>Skincare</strong><span>Serums, Moisturisers &amp; SPF</span><i aria-hidden="true">→</i></span>
           </a>
           <a class="cat-card reveal acc" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20your%20Accessories%20collection!" target="_blank" rel="noopener" aria-label="Accessories: brushes, tools and pouches. Opens WhatsApp">
-            <img src="../assets/accessories-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" />
+            <span class="cat-media" data-clip-reveal data-reveal-direction="up"><img src="../assets/accessories-banner.webp" alt="" width="600" height="900" loading="lazy" onerror="this.hidden=true" /></span>
             <span class="cat-body"><strong>Accessories</strong><span>Brushes, Tools &amp; Pouches</span><i aria-hidden="true">→</i></span>
           </a>
         </div>
@@ -192,11 +199,11 @@
         </div>
         <!-- OWNER: only list brands you currently stock. NARS, MAC, Forever 52 and GUESS were removed until confirmed. -->
         <ul class="brand-grid reveal">
-          <li class="brand-card"><img src="../assets/brand-swiss.webp" alt="Swiss Beauty" height="50" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><span class="brand-name" hidden>Swiss Beauty</span></li>
-          <li class="brand-card"><img src="../assets/brand-mars.webp" alt="MARS" height="50" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><span class="brand-name" hidden>MARS</span></li>
-          <li class="brand-card"><span class="brand-name">Insight</span></li>
-          <li class="brand-card"><span class="brand-name">Lakmé</span></li>
-          <li class="brand-card"><img src="../assets/brand-nykaa.webp" alt="Nykaa" height="50" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><span class="brand-name" hidden>Nykaa</span></li>
+          <li class="brand-card rx-reveal-up"><img src="../assets/brand-swiss.webp" alt="Swiss Beauty" height="50" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><span class="brand-name" hidden>Swiss Beauty</span></li>
+          <li class="brand-card rx-reveal-up"><img src="../assets/brand-mars.webp" alt="MARS" height="50" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><span class="brand-name" hidden>MARS</span></li>
+          <li class="brand-card rx-reveal-up"><span class="brand-name">Insight</span></li>
+          <li class="brand-card rx-reveal-up"><span class="brand-name">Lakmé</span></li>
+          <li class="brand-card rx-reveal-up"><img src="../assets/brand-nykaa.webp" alt="Nykaa" height="50" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false" /><span class="brand-name" hidden>Nykaa</span></li>
         </ul>
       </div>
     </section>
