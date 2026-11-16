@@ -1,0 +1,282 @@
+/* ==========================================================
+   ROOPIX shared motion layer
+   Adapted from the supplied CSS Scroll Reveal, Parallax Hero
+   and Image Clip Reveal examples. Scoped to ROOPIX classes.
+   ========================================================== */
+
+/* ---------- Native CSS scroll reveals ---------- */
+.rx-reveal-fade,
+.rx-reveal-up,
+.rx-reveal-scale,
+.rx-reveal-left,
+.rx-reveal-right {
+  animation-duration: auto;
+  animation-timing-function: var(--rx-reveal-ease, cubic-bezier(.22,.61,.36,1));
+  animation-fill-mode: both;
+  animation-timeline: view();
+  animation-range: var(--rx-reveal-range, entry 0% cover 36%);
+  will-change: opacity, transform;
+}
+
+.rx-reveal-fade { animation-name: rx-fade-in; }
+.rx-reveal-up { animation-name: rx-slide-up; }
+.rx-reveal-scale { animation-name: rx-scale-in; }
+.rx-reveal-left { animation-name: rx-slide-left; }
+.rx-reveal-right { animation-name: rx-slide-right; }
+
+@keyframes rx-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes rx-slide-up {
+  from { opacity: 0; transform: translateY(3rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes rx-scale-in {
+  from { opacity: 0; transform: scale(.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes rx-slide-left {
+  from { opacity: 0; transform: translateX(-2.5rem); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes rx-slide-right {
+  from { opacity: 0; transform: translateX(2.5rem); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.rx-reveal-up:nth-child(2) { --rx-reveal-range: entry 4% cover 39%; }
+.rx-reveal-up:nth-child(3) { --rx-reveal-range: entry 8% cover 42%; }
+.rx-reveal-up:nth-child(4) { --rx-reveal-range: entry 12% cover 45%; }
+
+/* Browsers without view timelines show the settled page, never hidden copy. */
+@supports not (animation-timeline: view()) {
+  .rx-reveal-fade,
+  .rx-reveal-up,
+  .rx-reveal-scale,
+  .rx-reveal-left,
+  .rx-reveal-right {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rx-reveal-fade,
+  .rx-reveal-up,
+  .rx-reveal-scale,
+  .rx-reveal-left,
+  .rx-reveal-right {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto;
+  }
+}
+
+/* ---------- Shared image clip-reveal contract ---------- */
+[data-clip-reveal] {
+  overflow: hidden;
+  isolation: isolate;
+}
+[data-clip-reveal] > img,
+[data-clip-reveal] img {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* ---------- ROOPIX Exports parallax hero ---------- */
+.x-parallax-hero {
+  --x-parallax-ink: #10140f;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: min(88svh, 920px);
+  min-height: 650px;
+  overflow: clip;
+  background: #0b0e0c;
+  color: #f4f0e8;
+}
+
+.x-parallax-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+.x-parallax-layer--back { z-index: 0; }
+.x-parallax-layer--back img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
+  transform: scale(1.04);
+}
+.x-parallax-layer--wash {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(5,9,7,.94) 0%, rgba(5,9,7,.82) 34%, rgba(5,9,7,.35) 70%, rgba(5,9,7,.22) 100%),
+    linear-gradient(0deg, rgba(5,9,7,.58) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(5,9,7,.2), transparent 36%);
+}
+.x-parallax-layer--detail {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: calc(var(--header-h, 106px) + 2rem) clamp(2rem, 7vw, 7rem) 3.5rem 0;
+}
+.x-parallax-frame {
+  width: clamp(240px, 29vw, 410px);
+  height: min(68%, 650px);
+  min-height: 420px;
+  padding: .65rem;
+  border: 1px solid rgba(220,197,158,.48);
+  background: rgba(20,25,19,.72);
+  box-shadow: 0 28px 80px rgba(0,0,0,.34);
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+}
+.x-parallax-frame__media {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  background: #182018;
+}
+.x-parallax-frame__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.x-parallax-frame figcaption,
+.x-parallax-frame > figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgba(237,225,202,.75);
+  font-size: .55rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.x-parallax-frame figcaption span { color: #d7bd91; }
+.x-parallax-layer--content {
+  z-index: 3;
+  pointer-events: none;
+}
+.x-parallax-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-top: calc(var(--header-h, 106px) + 1.5rem);
+  padding-bottom: 6rem;
+  pointer-events: none;
+}
+.x-parallax-copy {
+  width: min(66%, 760px);
+  pointer-events: auto;
+}
+.x-parallax-copy h1 {
+  max-width: 760px;
+  margin: 1.5rem 0 1.25rem;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(4rem, 7.2vw, 7.5rem);
+  font-weight: 300;
+  line-height: .88;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+.x-parallax-copy h1 em {
+  color: #d9bd8e;
+  font-style: italic;
+  font-weight: 300;
+}
+.x-parallax-lead {
+  max-width: 520px;
+  color: rgba(244,240,232,.78);
+  font-size: clamp(.9rem, 1.05vw, 1rem);
+  font-weight: 300;
+  line-height: 1.85;
+}
+.x-parallax-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.x-parallax-bottom {
+  position: absolute;
+  z-index: 5;
+  left: clamp(1.25rem, 4vw, 3.2rem);
+  right: clamp(1.25rem, 4vw, 3.2rem);
+  bottom: 1.7rem;
+  display: grid;
+  grid-template-columns: 1fr minmax(110px, 300px) 1fr;
+  align-items: center;
+  gap: 1.2rem;
+  color: rgba(244,240,232,.66);
+  font-size: .54rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.x-parallax-bottom > span:last-child { text-align: right; }
+.x-parallax-bottom b { color: #d9bd8e; padding-inline: .35rem; }
+.x-parallax-progress {
+  height: 1px;
+  background: rgba(244,240,232,.26);
+  overflow: hidden;
+}
+.x-parallax-progress i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #d9bd8e;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+@media (max-width: 900px) {
+  .x-parallax-copy { width: min(75%, 680px); }
+  .x-parallax-frame { width: clamp(210px, 30vw, 300px); min-height: 360px; }
+  .x-parallax-layer--detail { padding-right: 2rem; }
+}
+@media (max-width: 700px) {
+  .x-parallax-hero { height: 760px; min-height: 700px; }
+  .x-parallax-layer--detail { display: none; }
+  .x-parallax-layer--back img { object-position: 58% center; }
+  .x-parallax-layer--wash {
+    background:
+      linear-gradient(180deg, rgba(5,9,7,.86) 0%, rgba(5,9,7,.72) 44%, rgba(5,9,7,.25) 100%),
+      linear-gradient(90deg, rgba(5,9,7,.28), transparent);
+  }
+  .x-parallax-content {
+    align-items: flex-start;
+    padding-top: calc(var(--header-h, 106px) + 2.3rem);
+    padding-bottom: 6rem;
+  }
+  .x-parallax-copy { width: 100%; max-width: 590px; }
+  .x-parallax-copy h1 { font-size: clamp(3.45rem, 13vw, 5.25rem); margin: 1.3rem 0 1rem; }
+  .x-parallax-lead { max-width: 430px; font-size: .85rem; line-height: 1.72; }
+  .x-parallax-actions { gap: 1rem; margin-top: 1.35rem; }
+  .x-parallax-actions .x-btn { min-height: 45px; padding: .8rem 1rem; font-size: .6rem; }
+  .x-parallax-actions .x-text-link { font-size: .62rem; }
+  .x-parallax-bottom { grid-template-columns: 1fr 90px; gap: .8rem; bottom: 1.15rem; font-size: .48rem; }
+  .x-parallax-bottom > span:last-child { display: none; }
+}
+@media (max-width: 400px) {
+  .x-parallax-copy h1 { font-size: 3.25rem; }
+  .x-parallax-actions { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .x-parallax-layer,
+  .x-parallax-frame__media,
+  .x-parallax-progress i { will-change: auto; }
+}
