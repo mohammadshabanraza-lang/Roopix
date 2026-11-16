@@ -29,7 +29,7 @@
     if (empty) empty.hidden = true;
     grid.hidden = false;
 
-    var specs = [['Material', 'material'], ['Dimensions', 'dimensions'], ['Finish', 'finish'], ['Customisation', 'customisation']];
+    var specs = [['Material', 'material'], ['Dimensions', 'dimensions'], ['Weight', 'weight'], ['Finish', 'finish'], ['Packaging', 'packaging'], ['Customisation', 'customisation']];
     products.forEach(function (p) {
       var card = el('article', 'product-card');
       card.dataset.category = p.category || '';
@@ -37,7 +37,7 @@
       media.setAttribute('data-clip-reveal', '');
       media.setAttribute('data-reveal-direction', 'up');
       var img = el('img');
-      img.src = p.image; img.alt = p.alt || p.name; img.loading = 'lazy'; img.width = 800; img.height = 600;
+      img.src = p.image; img.alt = p.alt || p.name; img.loading = 'lazy'; img.decoding = 'async'; img.width = 800; img.height = 600;
       img.addEventListener('error', function () { card.hidden = true; });
       media.appendChild(img);
       var body = el('div', 'product-body');
@@ -112,11 +112,14 @@
   }
 
   function validate() {
+    var websiteValue = val('f-website');
+    var websiteOk = !websiteValue || /^https?:\/\/(?:[^\s.]+\.)+[^\s.]{2,}(?::\d+)?(?:[/?#][^\s]*)?$/i.test(websiteValue);
     var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val('f-email'));
     var checks = [
       ['f-name', 'e-name', val('f-name').length > 0],
       ['f-country', 'e-country', val('f-country').length > 0],
       ['f-email', 'e-email', emailOk],
+      ['f-website', 'e-website', websiteOk],
       ['f-message', 'e-message', val('f-message').length >= 5]
     ];
     var firstBad = null;
@@ -131,7 +134,7 @@
   function collect() {
     return {
       name: val('f-name'), company: val('f-company'), country: val('f-country'), email: val('f-email'),
-      product: $('#f-product').value, quantity: val('f-qty'), message: val('f-message')
+      product: $('#f-product').value, quantity: val('f-qty'), website: val('f-website'), destination: val('f-destination'), sample: val('f-sample'), customisation: val('f-custom'), timeline: val('f-timeline'), message: val('f-message')
     };
   }
 
@@ -147,19 +150,25 @@
       'Company: ' + (d.company || '-'),
       'Country: ' + d.country,
       'Work email: ' + d.email,
+      'Company website: ' + (d.website || '-'),
+      'Destination port / city: ' + (d.destination || '-'),
       'Product of interest: ' + (d.product || '-'),
-      'Estimated quantity: ' + (d.quantity || '-'), '',
+      'Estimated quantity: ' + (d.quantity || '-'),
+      'Sample requirement: ' + (d.sample || '-'),
+      'Customisation: ' + (d.customisation || '-'),
+      'Expected timeline: ' + (d.timeline || '-'), '',
       'Message:', d.message, '',
       'Sent from the enquiry form at roopix.in/exports/'
     ].join('\n');
   }
 
-  ['f-name', 'f-country', 'f-email', 'f-message'].forEach(function (id) {
+  ['f-name', 'f-country', 'f-email', 'f-website', 'f-message'].forEach(function (id) {
     $('#' + id).addEventListener('input', function () { showError(id, 'e-' + id.slice(2), false); });
   });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    if (val('f-company-fax')) { status.textContent = 'Unable to process this enquiry. Please contact ROOPIX by email.'; return; }
     if (!validate()) return;
     var d = collect(), text = bodyText(d);
     enquiryText.value = 'To: ' + CFG.email + '\nSubject: ' + subject(d) + '\n\n' + text;
@@ -169,10 +178,11 @@
   });
 
   $('#sendWa').addEventListener('click', function () {
+    if (val('f-company-fax')) { status.textContent = 'Unable to process this enquiry. Please contact ROOPIX by email.'; return; }
     if (!validate()) return;
     var d = collect();
     var msg = 'Hello ROOPIX Exports, I would like to request a quote.\n\nName: ' + d.name + '\nCompany: ' + (d.company || '-') + '\nCountry: ' + d.country +
-      '\nEmail: ' + d.email + '\nProduct: ' + (d.product || '-') + '\nQuantity: ' + (d.quantity || '-') + '\n\n' + d.message;
+      '\nEmail: ' + d.email + '\nCompany website: ' + (d.website || '-') + '\nDestination: ' + (d.destination || '-') + '\nProduct: ' + (d.product || '-') + '\nQuantity: ' + (d.quantity || '-') + '\nSamples: ' + (d.sample || '-') + '\nCustomisation: ' + (d.customisation || '-') + '\nTimeline: ' + (d.timeline || '-') + '\n\n' + d.message;
     status.textContent = 'WhatsApp should open in a new tab. Please press send there to complete your enquiry.';
     window.open('https://wa.me/' + CFG.whatsapp + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
   });
