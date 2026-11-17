@@ -1,44 +1,38 @@
-# ROOPIX website implementation report
+# ROOPIX website improvement release
 
-Updated: 17 November 2026
+Source: latest owner-provided `Roopix-main(6).zip`.
 
-## Implemented in this source package
+## Work completed
 
-- Reworked the main homepage around the supplied UX Pilot concept: clear first-screen value proposition, two division calls to action, overlapping Beauty/Exports imagery, division cards, shared values, operating principles, export sourcing workflow, founder note and segmented contact routes.
-- Rewrote the Beauty first-screen heading and description so visitors immediately understand that ROOPIX Beauty is a multi-brand cosmetics and skincare store in Joya. Tightened the meta description and preserved direct online-store and WhatsApp routes.
-- Rewrote the Exports meta description and made its first-screen actions more explicit.
-- Reduced the visible export enquiry form from 13 optional/required entries to five fields: name, company/organisation, country, email and a single requirement message. The requirement field prompts buyers to include category, quantity, destination, material and finish details.
-- Updated the enquiry script for the simplified form and retained email/WhatsApp handoff. It still does not submit data to a web server or CRM.
-- Removed broken links to a company-overview PDF that was not present in the repository. Replaced them with an email request for company information.
-- Improved mobile control targets, including navigation, menu, buttons, FAQ summaries and catalogue filters. Raised small-label sizes on mobile, improved export contrast in light sections, and reduced unnecessary all-caps treatments.
-- Updated policy links to use explicit “Terms & privacy” wording and refreshed sitemap dates.
-- Added a shared implementation stylesheet to keep the site-wide changes centralised and easier to maintain.
+- Added a final professional CSS layer across the homepage, Beauty, Exports and Policies pages.
+- Corrected ROOPIX Beauty's light blush theme so headlines, section headings, the Story copy, Mission/Vision/Approach cards, descriptions, buttons, FAQs, store details and contact cards use high-contrast dark text on pale backgrounds. Dark photographic cards, WhatsApp band, navigation and footer retain light text on dark surfaces.
+- Refined Beauty hero type sizing and mobile layout so the main proposition, copy and primary actions remain legible and well grouped.
+- Improved global body text rhythm, keyboard focus, hit-area sizing, button sizing, mobile label sizes and line-height.
+- Refined Exports text contrast on light and dark sections, form fields, labels, enquiry notes and mobile controls.
+- Strengthened homepage text contrast while retaining the UX Pilot-inspired ivory/charcoal direction and the original division architecture.
+- Reduced decorative all-caps styling in editorial labels without changing brand names.
+- Added square favicon variants in 32, 96 and 192 pixels, generated a multi-resolution root `favicon.ico`, and made the SVG favicon square and visually consistent with the supplied 192px monogram artwork.
+- Added explicit favicon references to all four pages and cache-busted the new stylesheet.
 
-## Deliberately not fabricated
+## Items intentionally not fabricated
 
-- No customer reviews, testimonials, partner logos or buyer statistics were invented. Use real review text and permission-cleared photographs when supplied.
-- No product catalogue items or specifications were invented. The live product grid remains dependent on verified product records and photographs.
-- No domain email address was invented. The current public email remains roopix.in@gmail.com.
-- The form remains a visitor-controlled email/WhatsApp handoff. A real server-side form requires a secure endpoint and spam protection.
+- No customer quotations, star ratings, customer counts or testimonials were invented. Genuine reviews and permission-cleared customer/store photographs should be added only when the owner supplies them.
+- No export catalogue items, product codes, dimensions, materials, MOQs, export destinations, supplier certifications or buyer references were invented. The current catalogue remains empty because the supplied repository contains no verified product records.
+- No domain-based email address was invented. The existing `roopix.in@gmail.com` contact remains.
 
-## Hosting-level items requiring configuration outside this static repository
+## Static-site / hosting limitations
 
-- HTTPS must be enforced by the actual host/CDN. The public HTTP URL should redirect to HTTPS; this package cannot provision a TLS certificate.
-- Security response headers (for example Content-Security-Policy, X-Content-Type-Options, Referrer-Policy and Permissions-Policy) must be configured at the hosting/CDN layer. Static HTML/CSS/JS files cannot set response headers. If the site is hosted on GitHub Pages, those headers need a proxy/CDN or a host that supports custom headers. Confirm the actual hosting provider before applying a header configuration.
+- The Exports enquiry form is still an email/WhatsApp handoff, not a server-side submission. This source repository contains no backend endpoint.
+- HTTP security headers (CSP, HSTS, X-Content-Type-Options, Referrer-Policy and Permissions-Policy) must be configured at the actual hosting/CDN layer. A static HTML/CSS change cannot guarantee these response headers on GitHub Pages.
+- Google Search favicon refresh is controlled by Google's crawl/cache cycle after the updated favicon files are deployed.
 
-## Verification to complete before deployment
+## Verification performed
 
-- Validate the three pages on real mobile and desktop browsers, including the mobile menu, outbound store links, WhatsApp and mailto behaviour.
-- Check the site with a current accessibility scanner and inspect every reported contrast node.
-- Verify the public DNS/HTTPS redirect, hosting headers and current online-store links.
-- Add buyer reviews or customer testimonials only after real feedback and permission are obtained.
+- Confirmed each page retains a responsive viewport meta tag and a unique page title.
+- Confirmed all local HTML link targets and same-page anchors in the four pages resolve against the supplied repository.
+- Confirmed no duplicate IDs or images without alt attributes in the four HTML pages.
+- Confirmed the Exports form has five business fields (name, company optional, country, email and requirement message); the extra copy-fallback field is hidden and is not part of the initial enquiry form.
+- Confirmed favicon raster dimensions and valid SVG structure.
+- Parsed the final CSS and XML sitemap.
 
-
-## Static checks completed for this package
-
-- JavaScript syntax checks passed for all remaining `.js` files with Node.js.
-- HTML source checks passed for page titles, description lengths, viewport tags, one H1 per page, duplicate IDs, internal fragment links, local asset references and labelled form controls.
-- The Exports form contains exactly five user-facing controls.
-- Export copy now qualifies quality, packing and shipping coordination as responsibilities to be discussed and agreed per order, rather than a blanket guarantee.
-- CSS files parsed without top-level syntax errors; the sitemap parsed as valid XML.
-- A full browser screenshot/interaction pass was not completed in this environment. Perform visual review and keyboard/touch testing on a staging deployment before replacing production.
+A full live-browser test and hosting-header verification still require deployment/staging access.
