@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>document.documentElement.classList.add("js");document.documentElement.classList.add(/\/beauty\//.test(location.pathname)?"pg-beauty":/\/exports\//.test(location.pathname)?"pg-exports":"pg-home");setTimeout(function(){if(!window.__roopixBase){document.documentElement.classList.remove("js");}},4000);</script>
-  <title>ROOPIX Beauty | Makeup &amp; Skincare in Joya</title>
+  <script src="../assets/page-init.js"></script>
+<title>ROOPIX Beauty | Makeup &amp; Skincare in Joya</title>
   <meta name="description" content="Shop makeup, skincare and personal care at ROOPIX Beauty, a multi-brand beauty store in Joya, Uttar Pradesh, with online shopping and WhatsApp support." />
   <meta name="keywords" content="ROOPIX Beauty, makeup, skincare, cosmetics, Swiss Beauty, MARS, Lakmé, Nykaa, Joya, Amroha" />
   <meta name="robots" content="index, follow" />
@@ -26,14 +26,15 @@
   <meta name="twitter:image" content="https://roopix.in/assets/og-beauty.jpg" />
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="alternate icon" type="image/png" href="../assets/favicon-32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="image" href="../assets/hero-banner.webp" fetchpriority="high" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" /></noscript>
-  <link rel="stylesheet" href="../assets/base.css?v=4" />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" />
+  <link rel="stylesheet" href="../assets/base.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=5" />
   <link rel="stylesheet" href="../assets/roopix-effects.css?v=2" />
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>
@@ -44,7 +45,7 @@
   <link rel="stylesheet" href="../assets/refinements.css?v=1" />
   <link rel="stylesheet" href="../assets/beauty-luxe.css?v=3" />
   <link rel="stylesheet" href="../assets/implementation.css?v=1" />
-  <link rel="stylesheet" href="../assets/brand-system.css?v=20261117-1" />
+  <link rel="stylesheet" href="../assets/brand-system.css?v=20261117-2" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -57,7 +58,7 @@
     </div>
     <nav class="nav" aria-label="Main">
       <a class="nav-logo" href="./" aria-label="ROOPIX Beauty home">
-        <img src="../assets/logo.webp" alt="ROOPIX" height="38" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
+        <img src="../assets/logo.webp" alt="ROOPIX" height="38" />
         <span class="logo-fallback" hidden>ROOPIX</span>
       </a>
       <ul class="nav-links">
@@ -70,7 +71,7 @@
         <li><a href="#ask">Contact</a></li>
       </ul>
       <div class="nav-right">
-        <a class="nav-cta" href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener">Online Store</a>
+        <a class="nav-cta" href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener noreferrer">Online Store</a>
         <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
       </div>
     </nav>
@@ -86,8 +87,8 @@
       <li><a href="#store">Store</a></li>
       <li><a href="#ask">Contact</a></li>
     </ul>
-    <a class="btn btn-primary" href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener">Online Store</a>
-    <a class="btn btn-ghost" href="https://wa.me/919639160626" target="_blank" rel="noopener">WhatsApp Order Support</a>
+    <a class="btn btn-primary" href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener noreferrer">Online Store</a>
+    <a class="btn btn-ghost" href="https://wa.me/919639160626" target="_blank" rel="noopener noreferrer">WhatsApp Order Support</a>
   </div>
 
   <main id="main">
@@ -104,10 +105,10 @@
             <li>Ask for product details</li>
           </ul>
           <div class="btn-row">
-            <a class="btn btn-primary" href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener">Online Store</a>
+            <a class="btn btn-primary" href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener noreferrer">Online Store</a>
             <a class="btn btn-ghost" href="#categories">Explore Collections</a>
           </div>
-          <p class="hero-link"><a href="https://wa.me/919639160626" target="_blank" rel="noopener">Ask us on WhatsApp →</a></p>
+          <p class="hero-link"><a href="https://wa.me/919639160626" target="_blank" rel="noopener noreferrer">Ask us on WhatsApp →</a></p>
         </div>
         <div class="b-hero-media">
           <img src="../assets/hero-banner.webp" alt="Editorial still life of makeup and beauty essentials" width="1448" height="1086" fetchpriority="high" decoding="async" />
@@ -162,45 +163,45 @@
           <p class="section-sub">Pick a category to start a WhatsApp chat about it, or browse the online store.</p>
         </div>
         <div class="cat-grid">
-          <a class="cat-card reveal lips" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Lips%20collection." target="_blank" rel="noopener" aria-label="Lips: Lipsticks, gloss and lip essentials. Opens WhatsApp">
+          <a class="cat-card reveal lips" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Lips%20collection." target="_blank" rel="noopener noreferrer" aria-label="Lips: Lipsticks, gloss and lip essentials. Opens WhatsApp">
             <span class="cat-media" aria-hidden="true"><img src="../assets/beauty-categories/lips-editorial.webp" alt="" loading="lazy" decoding="async" width="900" height="1350"></span>
             <span class="cat-index">01 / Beauty</span><span class="cat-glass-mark" aria-hidden="true">ROOPIX Beauty</span>
             <span class="cat-body"><strong>Lips</strong><span>Lipsticks, gloss and lip essentials</span><i aria-hidden="true">Explore collection →</i></span>
           </a>
-          <a class="cat-card reveal face" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Face%20Makeup%20collection." target="_blank" rel="noopener" aria-label="Face Makeup: Foundation, complexion and finishing products. Opens WhatsApp">
+          <a class="cat-card reveal face" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Face%20Makeup%20collection." target="_blank" rel="noopener noreferrer" aria-label="Face Makeup: Foundation, complexion and finishing products. Opens WhatsApp">
             <span class="cat-media" aria-hidden="true"><img src="../assets/beauty-categories/face-makeup-editorial.webp" alt="" loading="lazy" decoding="async" width="900" height="1350"></span>
             <span class="cat-index">02 / Beauty</span><span class="cat-glass-mark" aria-hidden="true">ROOPIX Beauty</span>
             <span class="cat-body"><strong>Face Makeup</strong><span>Foundation, complexion and finishing products</span><i aria-hidden="true">Explore collection →</i></span>
           </a>
-          <a class="cat-card reveal eye" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Eye%20Makeup%20collection." target="_blank" rel="noopener" aria-label="Eye Makeup: Kajal, mascara and eye colour. Opens WhatsApp">
+          <a class="cat-card reveal eye" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Eye%20Makeup%20collection." target="_blank" rel="noopener noreferrer" aria-label="Eye Makeup: Kajal, mascara and eye colour. Opens WhatsApp">
             <span class="cat-media" aria-hidden="true"><img src="../assets/beauty-categories/eye-makeup-editorial.webp" alt="" loading="lazy" decoding="async" width="900" height="1350"></span>
             <span class="cat-index">03 / Beauty</span><span class="cat-glass-mark" aria-hidden="true">ROOPIX Beauty</span>
             <span class="cat-body"><strong>Eye Makeup</strong><span>Kajal, mascara and eye colour</span><i aria-hidden="true">Explore collection →</i></span>
           </a>
-          <a class="cat-card reveal skin" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Skincare%20collection." target="_blank" rel="noopener" aria-label="Skincare: Cleansers, serums and daily care. Opens WhatsApp">
+          <a class="cat-card reveal skin" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Skincare%20collection." target="_blank" rel="noopener noreferrer" aria-label="Skincare: Cleansers, serums and daily care. Opens WhatsApp">
             <span class="cat-media" aria-hidden="true"><img src="../assets/beauty-categories/skincare-editorial.webp" alt="" loading="lazy" decoding="async" width="900" height="1350"></span>
             <span class="cat-index">04 / Beauty</span><span class="cat-glass-mark" aria-hidden="true">ROOPIX Beauty</span>
             <span class="cat-body"><strong>Skincare</strong><span>Cleansers, serums and daily care</span><i aria-hidden="true">Explore collection →</i></span>
           </a>
-          <a class="cat-card reveal acc" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Accessories%20collection." target="_blank" rel="noopener" aria-label="Accessories: Brushes, tools and beauty essentials. Opens WhatsApp">
+          <a class="cat-card reveal acc" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Accessories%20collection." target="_blank" rel="noopener noreferrer" aria-label="Accessories: Brushes, tools and beauty essentials. Opens WhatsApp">
             <span class="cat-media" aria-hidden="true"><img src="../assets/beauty-categories/beauty-tools-editorial.webp" alt="" loading="lazy" decoding="async" width="900" height="1350"></span>
             <span class="cat-index">05 / Beauty</span><span class="cat-glass-mark" aria-hidden="true">ROOPIX Beauty</span>
             <span class="cat-body"><strong>Accessories</strong><span>Brushes, tools and beauty essentials</span><i aria-hidden="true">Explore collection →</i></span>
           </a>
-          <a class="cat-card reveal hair" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Haircare%20products." target="_blank" rel="noopener" aria-label="Haircare: Shampoo, conditioner and hair treatments. Opens WhatsApp">
+          <a class="cat-card reveal hair" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Haircare%20products." target="_blank" rel="noopener noreferrer" aria-label="Haircare: Shampoo, conditioner and hair treatments. Opens WhatsApp">
             <span class="cat-media" aria-hidden="true"><img src="../assets/beauty-categories/haircare-editorial.webp" alt="" loading="lazy" decoding="async" width="900" height="1350"></span>
             <span class="cat-index">06 / Beauty</span><span class="cat-glass-mark" aria-hidden="true">ROOPIX Beauty</span>
             <span class="cat-body"><strong>Haircare</strong><span>Shampoo, conditioner and hair treatments</span><i aria-hidden="true">Explore collection →</i></span>
           </a>
-          <a class="cat-card reveal fragrance" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Fragrances." target="_blank" rel="noopener" aria-label="Fragrance: Everyday scents and special-occasion fragrances. Opens WhatsApp">
+          <a class="cat-card reveal fragrance" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20browse%20Fragrances." target="_blank" rel="noopener noreferrer" aria-label="Fragrance: Everyday scents and special-occasion fragrances. Opens WhatsApp">
             <span class="cat-media" aria-hidden="true"><img src="../assets/beauty-categories/fragrance-editorial.webp" alt="" loading="lazy" decoding="async" width="900" height="1350"></span>
             <span class="cat-index">07 / Beauty</span><span class="cat-glass-mark" aria-hidden="true">ROOPIX Beauty</span>
             <span class="cat-body"><strong>Fragrance</strong><span>Everyday scents and special-occasion fragrances</span><i aria-hidden="true">Explore collection →</i></span>
           </a>
         </div>
         <div class="btn-row center reveal">
-          <a class="btn btn-primary" href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener">Browse the Online Store</a>
-          <a class="btn btn-ghost" href="https://wa.me/919639160626" target="_blank" rel="noopener">Ask on WhatsApp</a>
+          <a class="btn btn-primary" href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener noreferrer">Browse the Online Store</a>
+          <a class="btn btn-ghost" href="https://wa.me/919639160626" target="_blank" rel="noopener noreferrer">Ask on WhatsApp</a>
         </div>
       </div>
     </section>
@@ -249,9 +250,9 @@
           <p class="section-sub">Tap a topic to open a WhatsApp chat with a ready-made message.</p>
         </div>
         <div class="ask-grid">
-          <a class="ask-card reveal" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20could%20you%20help%20me%20find%20the%20right%20foundation%20shade%3F" target="_blank" rel="noopener"><p class="tag">Face</p><h3>Finding your shade</h3><p>Share your skin tone and what you like to wear, and we will suggest options.</p><span>Ask on WhatsApp →</span></a>
-          <a class="ask-card reveal" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20could%20you%20suggest%20a%20simple%20skincare%20routine%3F" target="_blank" rel="noopener"><p class="tag">Skincare</p><h3>A simple routine</h3><p>Tell us what you currently use and what you are looking for.</p><span>Ask on WhatsApp →</span></a>
-          <a class="ask-card reveal" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27m%20looking%20for%20a%20lip%20colour.%20Could%20you%20suggest%20some%3F" target="_blank" rel="noopener"><p class="tag">Lips</p><h3>Choosing a lip colour</h3><p>From soft nudes to deep berries, ask us what is in stock.</p><span>Ask on WhatsApp →</span></a>
+          <a class="ask-card reveal" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20could%20you%20help%20me%20find%20the%20right%20foundation%20shade%3F" target="_blank" rel="noopener noreferrer"><p class="tag">Face</p><h3>Finding your shade</h3><p>Share your skin tone and what you like to wear, and we will suggest options.</p><span>Ask on WhatsApp →</span></a>
+          <a class="ask-card reveal" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20could%20you%20suggest%20a%20simple%20skincare%20routine%3F" target="_blank" rel="noopener noreferrer"><p class="tag">Skincare</p><h3>A simple routine</h3><p>Tell us what you currently use and what you are looking for.</p><span>Ask on WhatsApp →</span></a>
+          <a class="ask-card reveal" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27m%20looking%20for%20a%20lip%20colour.%20Could%20you%20suggest%20some%3F" target="_blank" rel="noopener noreferrer"><p class="tag">Lips</p><h3>Choosing a lip colour</h3><p>From soft nudes to deep berries, ask us what is in stock.</p><span>Ask on WhatsApp →</span></a>
         </div>
       </div>
     </section>
@@ -265,7 +266,7 @@
           <p class="wa-body">Message us what you are looking for and we will confirm availability, price and delivery or pickup options.</p>
         </div>
         <div class="wa-action">
-          <a class="btn btn-wa" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20place%20an%20order!" target="_blank" rel="noopener">Chat &amp; Order Now</a>
+          <a class="btn btn-wa" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20place%20an%20order!" target="_blank" rel="noopener noreferrer">Chat &amp; Order Now</a>
           <p class="wa-number">+91 96391 60626</p>
         </div>
       </div>
@@ -290,7 +291,7 @@
     <section class="section b-faq" id="beauty-faq" aria-labelledby="bFaqTitle">
       <div class="container b-faq-grid">
         <div class="reveal"><p class="eyebrow">Helpful information</p><h2 class="section-title" id="bFaqTitle">Before you <em>shop.</em></h2><p class="section-sub">A few practical answers to help you choose the right way to shop with ROOPIX Beauty.</p>
-          <a class="b-faq-contact" href="https://wa.me/919639160626" target="_blank" rel="noopener">Still have a question? Talk to us <span aria-hidden="true">↗</span></a></div>
+          <a class="b-faq-contact" href="https://wa.me/919639160626" target="_blank" rel="noopener noreferrer">Still have a question? Talk to us <span aria-hidden="true">↗</span></a></div>
         <div class="b-faq-list reveal">
           <details><summary>How can I check whether a product is available?</summary><p>Product availability can change. Please check the online store or message ROOPIX on WhatsApp before placing an order.</p></details>
           <details><summary>Can I ask about shades or product suitability?</summary><p>Yes. Share the product you are considering and the shade or finish you prefer. Our team can help with the information available to us.</p></details>
@@ -327,11 +328,11 @@
               <div><strong>Email</strong><p><a href="mailto:roopix.in@gmail.com">roopix.in@gmail.com</a></p></div>
             </div>
             <div class="store-actions">
-              <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=ROOPIX%2C%20Sheesh%20Mahal%20Building%2C%20Ikonda%20Road%2C%20Joya%2C%20Amroha%2C%20Uttar%20Pradesh%20244221" target="_blank" rel="noopener">Get directions <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-ghost" href="https://wa.me/919639160626?text=Hello%20ROOPIX%2C%20please%20confirm%20your%20store%20hours." target="_blank" rel="noopener">Confirm store hours</a>
+              <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=ROOPIX%2C%20Sheesh%20Mahal%20Building%2C%20Ikonda%20Road%2C%20Joya%2C%20Amroha%2C%20Uttar%20Pradesh%20244221" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-ghost" href="https://wa.me/919639160626?text=Hello%20ROOPIX%2C%20please%20confirm%20your%20store%20hours." target="_blank" rel="noopener noreferrer">Confirm store hours</a>
             </div>
           </div>
-          <a class="store-photo" href="https://www.google.com/maps/search/?api=1&amp;query=ROOPIX%2C%20Sheesh%20Mahal%20Building%2C%20Ikonda%20Road%2C%20Joya%2C%20Amroha%2C%20Uttar%20Pradesh%20244221" target="_blank" rel="noopener" aria-label="Find ROOPIX on Google Maps">
+          <a class="store-photo" href="https://www.google.com/maps/search/?api=1&amp;query=ROOPIX%2C%20Sheesh%20Mahal%20Building%2C%20Ikonda%20Road%2C%20Joya%2C%20Amroha%2C%20Uttar%20Pradesh%20244221" target="_blank" rel="noopener noreferrer" aria-label="Find ROOPIX on Google Maps">
             <img src="../assets/store-banner.webp" alt="ROOPIX store and beauty retail display" width="1099" height="1431" loading="lazy" />
             <span>ROOPIX · Joya, India <b>Open map ↗</b></span>
           </a>
@@ -343,9 +344,9 @@
       <div class="container">
         <div class="section-head reveal"><p class="eyebrow">We're easy to reach</p><h2 class="section-title" id="beautyContactTitle">Your next beauty find<br /><em>starts with a conversation.</em></h2></div>
         <div class="contact-grid">
-          <a class="contact-card reveal" href="https://wa.me/919639160626" target="_blank" rel="noopener"><strong>WhatsApp</strong><span>+91 96391 60626</span></a>
+          <a class="contact-card reveal" href="https://wa.me/919639160626" target="_blank" rel="noopener noreferrer"><strong>WhatsApp</strong><span>+91 96391 60626</span></a>
           <a class="contact-card reveal" href="mailto:roopix.in@gmail.com"><strong>Email</strong><span>roopix.in@gmail.com</span></a>
-          <a class="contact-card reveal" href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener"><strong>Online store</strong><span>Browse ROOPIX</span></a>
+          <a class="contact-card reveal" href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener noreferrer"><strong>Online store</strong><span>Browse ROOPIX</span></a>
           <a class="contact-card reveal" href="../policies/"><strong>Information</strong><span>Policies &amp; privacy</span></a>
         </div>
       </div>
@@ -359,16 +360,16 @@
         <p class="footer-tagline">Beauty, redefined.</p>
         <p class="footer-desc">Makeup, skincare and beauty essentials with personal guidance online, over WhatsApp and at our Joya store.</p>
         <p class="footer-email"><a href="mailto:roopix.in@gmail.com">roopix.in@gmail.com</a></p>
-        <div class="footer-social"><a href="https://www.instagram.com/roopix.in" target="_blank" rel="noopener" aria-label="ROOPIX on Instagram">Instagram ↗</a></div>
+        <div class="footer-social"><a href="https://www.instagram.com/roopix.in" target="_blank" rel="noopener noreferrer" aria-label="ROOPIX on Instagram">Instagram ↗</a></div>
       </div>
-      <div><h2>Discover</h2><ul><li><a href="#categories">Shop by category</a></li><li><a href="#brands">Brands</a></li><li><a href="#why-us">Why ROOPIX</a></li><li><a href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener">Online store</a></li></ul></div>
-      <div><h2>Visit &amp; support</h2><ul><li><a href="#store">Our store</a></li><li><a href="#beauty-faq">FAQs</a></li><li><a href="https://wa.me/919639160626" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="../">ROOPIX Home</a></li><li><a href="../exports/">ROOPIX Exports</a></li></ul></div>
+      <div><h2>Discover</h2><ul><li><a href="#categories">Shop by category</a></li><li><a href="#brands">Brands</a></li><li><a href="#why-us">Why ROOPIX</a></li><li><a href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener noreferrer">Online store</a></li></ul></div>
+      <div><h2>Visit &amp; support</h2><ul><li><a href="#store">Our store</a></li><li><a href="#beauty-faq">FAQs</a></li><li><a href="https://wa.me/919639160626" target="_blank" rel="noopener noreferrer">WhatsApp</a></li><li><a href="../">ROOPIX Home</a></li><li><a href="../exports/">ROOPIX Exports</a></li></ul></div>
       <div><h2>Information</h2><ul><li><a href="../policies/">Terms &amp; privacy</a></li><li><a href="mailto:roopix.in@gmail.com">Email ROOPIX</a></li><li><a href="tel:+919639160626">+91 96391 60626</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p>© <span data-year>2026</span> ROOPIX Beauty. All rights reserved.</p><p>Sheesh Mahal Building, Ikonda Road, Joya, Amroha, Uttar Pradesh 244221, India</p></div>
   </footer>
   <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
-  <a class="float-wa" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20know%20more%20about%20Beauty." target="_blank" rel="noopener" aria-label="Chat with ROOPIX Beauty on WhatsApp">↗</a>
+  <a class="float-wa" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20know%20more%20about%20Beauty." target="_blank" rel="noopener noreferrer" aria-label="Chat with ROOPIX Beauty on WhatsApp">↗</a>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
