@@ -75,6 +75,15 @@
     $$('[data-dialog-close]', d).forEach(function (b) { b.addEventListener('click', function () { d.close(); }); });
   });
 
+  /* Same-origin logo fallback without inline event-handler attributes. */
+  $$('.nav-logo img, .footer-logo').forEach(function (img) {
+    img.addEventListener('error', function () {
+      img.hidden = true;
+      var fallback = img.nextElementSibling;
+      if (fallback && fallback.classList.contains('logo-fallback')) fallback.hidden = false;
+    }, { once: true });
+  });
+
   /* Footer year */
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
