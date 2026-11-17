@@ -21,7 +21,12 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); toggle.focus(); }
     });
-    window.matchMedia('(min-width: 961px)').addEventListener('change', function (e) { if (e.matches) setMenu(false); });
+    var desktopQuery = window.matchMedia ? window.matchMedia('(min-width: 961px)') : null;
+    if (desktopQuery) {
+      var onDesktopChange = function (e) { if (e.matches) setMenu(false); };
+      if (typeof desktopQuery.addEventListener === 'function') desktopQuery.addEventListener('change', onDesktopChange);
+      else if (typeof desktopQuery.addListener === 'function') desktopQuery.addListener(onDesktopChange);
+    }
   }
 
   /* Scroll reveal (content stays visible if JS or IntersectionObserver is unavailable) */

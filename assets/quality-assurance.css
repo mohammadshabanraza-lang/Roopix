@@ -1,0 +1,603 @@
+/* =====================================================================
+   ROOPIX QUALITY-ASSURANCE LAYER
+   Last-loaded corrective layer for readable Beauty copy, consistent
+   three-card alignment, and safer responsive layouts across the site.
+   ===================================================================== */
+
+/* Global layout containment: prevent grid/flex children from forcing
+   the document wider than the actual viewport. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+main,
+section,
+.container,
+.nav,
+.footer-inner,
+.home-hero__inner,
+.home-hero__visual,
+.home-division-grid,
+.home-vision__grid,
+.home-founder__grid,
+.home-contact-grid,
+.x-parallax-content,
+.x-intro__grid,
+.x-business-approach__inner,
+.x-business-sourcing,
+.x-category-grid,
+.x-standards-grid,
+.x-faq-grid,
+.x-enquiry__grid,
+.b-hero-grid,
+.b-about-grid,
+.b-trust-grid,
+.store-grid {
+  min-width: 0;
+  max-width: 100%;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Consistent minimum hit areas for primary navigation and common controls. */
+:where(
+  .division-bar a, .nav-logo, .nav-cta, .menu-toggle, .mobile-menu a,
+  .btn, .home-button, .home-text-link, .home-secondary-link,
+  .hero-link a, .b-faq-list summary, .b-faq-contact,
+  .store-detail a, .footer-social a, .footer ul a,
+  .x-btn, .x-text-link, .x-faq-list summary, .x-direct a,
+  .x-catalogue .chip, .float-wa, .to-top
+) {
+  min-height: 44px;
+}
+
+:where(.division-bar a, .nav-cta, .menu-toggle, .mobile-menu a,
+       .btn, .home-button, .hero-link a, .footer-social a,
+       .footer ul a, .x-btn, .x-text-link, .b-faq-list summary,
+       .x-faq-list summary, .x-direct a) {
+  display: inline-flex;
+  align-items: center;
+}
+
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+a,
+address,
+label {
+  overflow-wrap: break-word;
+}
+
+/* ------------------------ BEAUTY: LEGIBILITY ------------------------ */
+html.pg-beauty {
+  color-scheme: light !important;
+}
+
+html.pg-beauty body {
+  color: #2b1924 !important;
+  background: #fffafd !important;
+}
+
+/* The About section is a light blush surface. Keep all copy dark.
+   This intentionally supersedes the older dark-glass rules that made
+   the paragraph and the Mission / Vision / Approach cards unreadable. */
+html.pg-beauty .b-about {
+  background: linear-gradient(135deg, #f8eaf1 0%, #f6e8ef 58%, #f3e2eb 100%) !important;
+  color: #2b1924 !important;
+}
+
+html.pg-beauty .b-about .eyebrow {
+  color: #95194f !important;
+}
+
+html.pg-beauty .b-about .section-title {
+  color: #2b1924 !important;
+  text-shadow: none !important;
+}
+
+html.pg-beauty .b-about .section-title em {
+  color: #b51f65 !important;
+  -webkit-text-fill-color: #b51f65 !important;
+}
+
+html.pg-beauty .b-about .about-body {
+  color: #584752 !important;
+  opacity: 1 !important;
+  font-size: 1rem !important;
+  line-height: 1.8 !important;
+  text-shadow: none !important;
+}
+
+html.pg-beauty .b-about .pillars {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: .85rem !important;
+  width: 100%;
+}
+
+html.pg-beauty .b-about .pillars li {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  width: 100%;
+  min-width: 0;
+  min-height: 88px;
+  padding: 1.05rem 1.15rem !important;
+  border: 1px solid rgba(91, 48, 69, .14) !important;
+  border-radius: 15px !important;
+  background: #fff !important;
+  color: #2b1924 !important;
+  opacity: 1 !important;
+  box-shadow: 0 10px 28px rgba(63, 30, 48, .065) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+html.pg-beauty .b-about .pillars li > div {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+html.pg-beauty .b-about .pillars strong {
+  display: block;
+  margin: 0 0 .2rem !important;
+  color: #30232b !important;
+  opacity: 1 !important;
+  font-size: .98rem !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+}
+
+html.pg-beauty .b-about .pillars p {
+  margin: 0 !important;
+  color: #5c4d55 !important;
+  opacity: 1 !important;
+  font-size: .9rem !important;
+  line-height: 1.6 !important;
+  text-shadow: none !important;
+}
+
+html.pg-beauty .b-about .pillar-icon {
+  display: inline-flex;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(181, 31, 101, .25) !important;
+  border-radius: 12px;
+  background: #fff5fa !important;
+  color: #95194f !important;
+}
+
+/* --------------------- BEAUTY: THREE TRUST CARDS -------------------- */
+html.pg-beauty .b-trust {
+  background: #fffafd !important;
+  color: #2b1924 !important;
+}
+
+html.pg-beauty .b-trust .section-title,
+html.pg-beauty .b-trust .section-title em {
+  color: #2b1924 !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+html.pg-beauty .b-trust .section-title em {
+  color: #b51f65 !important;
+  -webkit-text-fill-color: #b51f65 !important;
+}
+
+html.pg-beauty .b-trust-intro > p:last-child {
+  color: #584752 !important;
+  opacity: 1 !important;
+  line-height: 1.75 !important;
+}
+
+html.pg-beauty .b-trust-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: 1rem !important;
+  width: 100%;
+  border: 0 !important;
+}
+
+html.pg-beauty .b-trust-card,
+html.pg-beauty .b-trust-card + article {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  min-width: 0;
+  min-height: 220px !important;
+  height: 100%;
+  margin: 0 !important;
+  padding: 1.4rem 1.45rem 1.5rem !important;
+  border: 1px solid rgba(80, 39, 60, .14) !important;
+  border-radius: 16px !important;
+  background: #fff !important;
+  color: #30232b !important;
+  box-shadow: 0 12px 30px rgba(55, 24, 42, .06) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+html.pg-beauty .b-trust-card > span {
+  display: block;
+  min-height: 1.45em;
+  margin: 0 0 .75rem !important;
+  color: #95194f !important;
+  font-size: .72rem !important;
+  font-weight: 600;
+  letter-spacing: .09em;
+  line-height: 1.45 !important;
+  opacity: 1 !important;
+}
+
+html.pg-beauty .b-trust-card h3 {
+  display: block;
+  min-height: 2.45em;
+  margin: 0 0 .55rem !important;
+  color: #30232b !important;
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.22 !important;
+  opacity: 1 !important;
+}
+
+html.pg-beauty .b-trust-card p {
+  flex: 1 1 auto;
+  margin: 0 !important;
+  max-width: 38ch;
+  color: #5c4d55 !important;
+  font-size: .92rem !important;
+  line-height: 1.7 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+/* Keep the rest of Beauty's light-background sections consistently
+   legible if a legacy dark theme selector is reintroduced upstream. */
+html.pg-beauty .b-categories,
+html.pg-beauty .b-why,
+html.pg-beauty .b-faq {
+  color: #2b1924 !important;
+}
+
+html.pg-beauty .b-categories .section-title,
+html.pg-beauty .b-why .section-title,
+html.pg-beauty .b-faq .section-title {
+  color: #2b1924 !important;
+}
+
+html.pg-beauty .b-categories .section-sub,
+html.pg-beauty .b-why .section-sub,
+html.pg-beauty .b-faq .section-sub {
+  color: #584752 !important;
+  opacity: 1 !important;
+}
+
+/* ------------------------ MOBILE / TABLET -------------------------- */
+@media (max-width: 960px) {
+  .nav {
+    gap: .75rem;
+  }
+
+  .nav-logo {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .nav-logo img {
+    max-width: min(42vw, 150px);
+    height: 34px;
+    object-fit: contain;
+  }
+
+  .nav-right {
+    gap: .5rem;
+    min-width: 0;
+  }
+
+  .menu-toggle {
+    flex: 0 0 44px;
+  }
+}
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 102px; }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: max(17px, env(safe-area-inset-left)) max(17px, env(safe-area-inset-right));
+  }
+
+  .section {
+    padding-block: clamp(3.25rem, 9vw, 4.5rem);
+  }
+
+  .division-bar {
+    width: 100%;
+    justify-content: center;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .division-bar a {
+    min-width: 0;
+    min-height: 42px;
+    padding: .62rem clamp(.65rem, 3.5vw, 1rem) !important;
+    font-size: clamp(.58rem, 2.7vw, .68rem) !important;
+    letter-spacing: .12em;
+    white-space: nowrap;
+  }
+
+  .nav {
+    width: 100%;
+    height: 60px;
+    min-width: 0;
+    padding-inline: 16px;
+  }
+
+  .nav-logo img { height: 32px; }
+
+  .mobile-menu {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 1rem;
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+
+  .mobile-menu ul { width: 100%; }
+  .mobile-menu ul a { min-height: 48px; }
+
+  .btn,
+  .home-button,
+  .x-btn {
+    min-height: 48px;
+  }
+
+  .footer-inner,
+  .footer-bottom,
+  .home-hero__facts,
+  .x-proof__inner,
+  .x-direct li {
+    min-width: 0;
+  }
+
+  .footer-desc,
+  .footer-email,
+  .footer-bottom p,
+  .home-hero__facts strong,
+  .x-direct li > span,
+  .x-direct li > a {
+    overflow-wrap: anywhere;
+  }
+
+  .float-wa {
+    right: max(13px, env(safe-area-inset-right)) !important;
+    bottom: max(16px, env(safe-area-inset-bottom)) !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .to-top {
+    right: max(16px, env(safe-area-inset-right)) !important;
+    bottom: calc(76px + env(safe-area-inset-bottom)) !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  /* ROOPIX corporate homepage */
+  .home-page .home-hero__inner,
+  .home-page .home-division-grid,
+  .home-page .home-vision__grid,
+  .home-page .home-founder__grid,
+  .home-page .home-contact-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .home-page .home-hero__inner > *,
+  .home-page .home-hero__visual,
+  .home-page .home-division-card,
+  .home-page .home-vision__grid > *,
+  .home-page .home-founder__grid > *,
+  .home-page .home-contact-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .home-page .home-hero__facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .85rem 1rem;
+  }
+
+  .home-page .home-hero__facts > div { min-width: 0; }
+
+  /* Beauty: predictable stacks and aligned cards. */
+  html.pg-beauty .b-hero-grid,
+  html.pg-beauty .b-about-grid,
+  html.pg-beauty .store-grid,
+  html.pg-beauty .wa-inner {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html.pg-beauty .about-media {
+    width: 100%;
+    max-width: 100%;
+    max-height: 360px;
+    aspect-ratio: 4 / 3;
+  }
+
+  html.pg-beauty .about-media img {
+    object-fit: cover;
+    object-position: center 45%;
+  }
+
+  html.pg-beauty .b-about .pillars li {
+    align-items: center !important;
+    min-height: 82px;
+    padding: .95rem 1rem !important;
+  }
+
+  html.pg-beauty .b-about .pillars strong { font-size: .96rem !important; }
+  html.pg-beauty .b-about .pillars p { font-size: .9rem !important; }
+
+  html.pg-beauty .b-trust-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: .8rem !important;
+  }
+
+  html.pg-beauty .b-trust-card,
+  html.pg-beauty .b-trust-card + article {
+    min-height: 0 !important;
+    height: auto;
+    padding: 1.15rem 1.15rem 1.2rem !important;
+  }
+
+  html.pg-beauty .b-trust-card h3 {
+    min-height: 0;
+    margin-bottom: .45rem !important;
+    font-size: 1.35rem !important;
+  }
+
+  html.pg-beauty .b-trust-card p { max-width: none; font-size: .92rem !important; }
+
+  html.pg-beauty .cat-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100%;
+  }
+
+  html.pg-beauty .cat-grid > .cat-card,
+  html.pg-beauty .cat-card:last-child:nth-child(odd) {
+    grid-column: 1 !important;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 1.34 / 1 !important;
+  }
+
+  html.pg-beauty .cat-index {
+    max-width: 38% !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  html.pg-beauty .cat-glass-mark {
+    max-width: 50% !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  html.pg-beauty .b-categories { padding-bottom: 7rem !important; }
+  html.pg-beauty .store-map iframe { width: 100%; max-width: 100%; height: 300px; }
+
+  /* Exports: prevent long B2B copy, cards and forms from pushing width. */
+  .exports-page .x-parallax-copy,
+  .exports-page .x-parallax-content,
+  .exports-page .x-intro__grid > *,
+  .exports-page .x-business-sourcing > *,
+  .exports-page .x-enquiry__grid > *,
+  .exports-page .x-enquiry__form,
+  .exports-page .x-enquiry__form .field,
+  .exports-page .x-category-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .exports-page .x-category-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .exports-page .x-category-card,
+  .exports-page .x-category-card:nth-child(4),
+  .exports-page .x-category-card:nth-child(5),
+  .exports-page .x-category-card:last-child {
+    grid-column: 1 !important;
+    min-height: 270px;
+  }
+
+  .exports-page .x-enquiry__form input,
+  .exports-page .x-enquiry__form select,
+  .exports-page .x-enquiry__form textarea {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .exports-page .x-form-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .exports-page .x-form-actions .x-btn { width: 100%; }
+}
+
+@media (max-width: 420px) {
+  .division-bar a {
+    padding-inline: .58rem !important;
+    letter-spacing: .095em;
+  }
+
+  .nav { padding-inline: 13px; }
+  .home-page .home-hero__facts { grid-template-columns: minmax(0, 1fr); }
+
+  html.pg-beauty .b-about .section-title {
+    font-size: clamp(2.25rem, 10vw, 3.1rem);
+    line-height: 1.08;
+  }
+
+  html.pg-beauty .cat-body { padding: 1rem .9rem 1.05rem !important; }
+  html.pg-beauty .cat-body span { font-size: .82rem !important; }
+
+  .exports-page .x-parallax-hero {
+    min-height: 720px;
+    height: 760px;
+  }
+
+  .exports-page .x-parallax-copy h1 {
+    font-size: clamp(3rem, 12.4vw, 3.65rem);
+    line-height: .94;
+    overflow-wrap: normal;
+  }
+
+  .exports-page .x-parallax-actions .x-btn,
+  .exports-page .x-parallax-actions .x-text-link {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
