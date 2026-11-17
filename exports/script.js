@@ -13,7 +13,7 @@
   var grid = $('#catalogueGrid');
   var empty = $('#catalogueEmpty');
   var filters = $('#catalogueFilters');
-  var productSelect = $('#f-product');
+  var messageField = $('#f-message');
   var products = (Array.isArray(window.ROOPIX_EXPORT_PRODUCTS) ? window.ROOPIX_EXPORT_PRODUCTS : [])
     .filter(function (p) { return p && p.name && p.image; });
 
@@ -57,13 +57,6 @@
       grid.appendChild(card);
     });
 
-    /* Add each product to the form's dropdown */
-    if (productSelect) {
-      products.forEach(function (p) {
-        var o = document.createElement('option'); o.textContent = label(p); productSelect.insertBefore(o, productSelect.lastElementChild);
-      });
-    }
-
     /* Category filter chips */
     var cats = [];
     products.forEach(function (p) { if (p.category && cats.indexOf(p.category) === -1) cats.push(p.category); });
@@ -81,13 +74,11 @@
   }
 
   function selectProduct(value) {
-    if (!productSelect) return;
-    for (var i = 0; i < productSelect.options.length; i++) {
-      if (productSelect.options[i].text === value || productSelect.options[i].value === value) {
-        productSelect.selectedIndex = i;
-        return;
-      }
-    }
+    if (!messageField || !value) return;
+    var current = messageField.value.trim();
+    var prefix = 'Product category: ' + value + '\n\n';
+    if (current.indexOf('Product category: ') !== 0) messageField.value = prefix + current;
+    else messageField.value = prefix + current.replace(/^Product category: [^\n]*\n?\n?/, '');
   }
 
   /* Cinematic collection cards can pre-select the matching enquiry category. */
@@ -112,14 +103,11 @@
   }
 
   function validate() {
-    var websiteValue = val('f-website');
-    var websiteOk = !websiteValue || /^https?:\/\/(?:[^\s.]+\.)+[^\s.]{2,}(?::\d+)?(?:[/?#][^\s]*)?$/i.test(websiteValue);
     var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val('f-email'));
     var checks = [
       ['f-name', 'e-name', val('f-name').length > 0],
       ['f-country', 'e-country', val('f-country').length > 0],
       ['f-email', 'e-email', emailOk],
-      ['f-website', 'e-website', websiteOk],
       ['f-message', 'e-message', val('f-message').length >= 5]
     ];
     var firstBad = null;
@@ -132,43 +120,33 @@
   }
 
   function collect() {
-    return {
-      name: val('f-name'), company: val('f-company'), country: val('f-country'), email: val('f-email'),
-      product: $('#f-product').value, quantity: val('f-qty'), website: val('f-website'), destination: val('f-destination'), sample: val('f-sample'), customisation: val('f-custom'), timeline: val('f-timeline'), message: val('f-message')
-    };
+    return { name: val('f-name'), company: val('f-company'), country: val('f-country'), email: val('f-email'), message: val('f-message') };
   }
 
   function subject(d) {
-    return 'Export enquiry: ' + (d.product || 'General') + (d.company ? ' – ' + d.company : ' – ' + d.name);
+    var category = (d.message.match(/^Product category: ([^\n]+)/) || [])[1];
+    return 'Export enquiry: ' + (category || 'General') + (d.company ? ' – ' + d.company : ' – ' + d.name);
   }
 
   function bodyText(d) {
     return [
       'Hello ROOPIX Exports,', '',
-      'I would like to request a quote.', '',
+      'I would like to discuss a sourcing requirement.', '',
       'Name: ' + d.name,
-      'Company: ' + (d.company || '-'),
+      'Company / organisation: ' + (d.company || '-'),
       'Country: ' + d.country,
-      'Work email: ' + d.email,
-      'Company website: ' + (d.website || '-'),
-      'Destination port / city: ' + (d.destination || '-'),
-      'Product of interest: ' + (d.product || '-'),
-      'Estimated quantity: ' + (d.quantity || '-'),
-      'Sample requirement: ' + (d.sample || '-'),
-      'Customisation: ' + (d.customisation || '-'),
-      'Expected timeline: ' + (d.timeline || '-'), '',
-      'Message:', d.message, '',
+      'Email: ' + d.email, '',
+      'Requirement:', d.message, '',
       'Sent from the enquiry form at roopix.in/exports/'
     ].join('\n');
   }
 
-  ['f-name', 'f-country', 'f-email', 'f-website', 'f-message'].forEach(function (id) {
+  ['f-name', 'f-country', 'f-email', 'f-message'].forEach(function (id) {
     $('#' + id).addEventListener('input', function () { showError(id, 'e-' + id.slice(2), false); });
   });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (val('f-company-fax')) { status.textContent = 'Unable to process this enquiry. Please contact ROOPIX by email.'; return; }
     if (!validate()) return;
     var d = collect(), text = bodyText(d);
     enquiryText.value = 'To: ' + CFG.email + '\nSubject: ' + subject(d) + '\n\n' + text;
@@ -178,11 +156,9 @@
   });
 
   $('#sendWa').addEventListener('click', function () {
-    if (val('f-company-fax')) { status.textContent = 'Unable to process this enquiry. Please contact ROOPIX by email.'; return; }
     if (!validate()) return;
     var d = collect();
-    var msg = 'Hello ROOPIX Exports, I would like to request a quote.\n\nName: ' + d.name + '\nCompany: ' + (d.company || '-') + '\nCountry: ' + d.country +
-      '\nEmail: ' + d.email + '\nCompany website: ' + (d.website || '-') + '\nDestination: ' + (d.destination || '-') + '\nProduct: ' + (d.product || '-') + '\nQuantity: ' + (d.quantity || '-') + '\nSamples: ' + (d.sample || '-') + '\nCustomisation: ' + (d.customisation || '-') + '\nTimeline: ' + (d.timeline || '-') + '\n\n' + d.message;
+    var msg = 'Hello ROOPIX Exports, I would like to discuss a sourcing requirement.\n\nName: ' + d.name + '\nCompany / organisation: ' + (d.company || '-') + '\nCountry: ' + d.country + '\nEmail: ' + d.email + '\n\nRequirement:\n' + d.message;
     status.textContent = 'WhatsApp should open in a new tab. Please press send there to complete your enquiry.';
     window.open('https://wa.me/' + CFG.whatsapp + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
   });
