@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="assets/brand-system.css?v=20261117-2" />
   <link rel="stylesheet" href="assets/section-identity.css?v=20261117-2" />
   <link rel="stylesheet" href="assets/final-design-system.css?v=20261117-10" />
+  <link rel="stylesheet" href="assets/ux-detail-fixes.css?v=1" />
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -104,11 +105,13 @@
         <div class="home-hero__visual" aria-label="ROOPIX Beauty store and Indian product sourcing">
           <figure class="home-visual-card home-visual-card--beauty">
             <img src="assets/store-banner.webp" alt="ROOPIX Beauty retail display in Joya" width="1099" height="1431" fetchpriority="high" decoding="async" />
-            <figcaption><span>Division 01</span><strong>ROOPIX Beauty</strong></figcaption>
+            <figcaption aria-hidden="true"><span>Division 01</span><strong>ROOPIX Beauty</strong></figcaption>
+            <a class="home-visual-card__link" href="beauty/" aria-label="Explore ROOPIX Beauty"><span class="ux-visually-hidden">Explore ROOPIX Beauty</span></a>
           </figure>
           <figure class="home-visual-card home-visual-card--exports">
             <img src="assets/exports/exports-cover.webp" alt="Example bird feeder product imagery for the ROOPIX Exports division" width="1200" height="900" decoding="async" />
-            <figcaption><span>Division 02</span><strong>ROOPIX Exports</strong></figcaption>
+            <figcaption aria-hidden="true"><span>Division 02</span><strong>ROOPIX Exports</strong></figcaption>
+            <a class="home-visual-card__link" href="exports/" aria-label="Explore ROOPIX Exports"><span class="ux-visually-hidden">Explore ROOPIX Exports</span></a>
           </figure>
           <span class="home-visual-note">Different markets. Shared values.</span>
         </div>
