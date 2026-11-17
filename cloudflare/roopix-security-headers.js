@@ -1,9 +1,8 @@
 /*
  * ROOPIX response-header hardening for Cloudflare Workers.
- * Deploy as a Worker and add a route for roopix.in/* (and www.roopix.in/*
- * only if that hostname is actively used and configured in DNS).
- * This is a hosting-layer configuration. It does not run merely because
- * this file is present in the GitHub repository.
+ * Deploy as a Worker and add a route for roopix.in/*.
+ * It does not run because this file exists in GitHub; deployment and routing
+ * must be completed in the Cloudflare dashboard.
  */
 const SECURITY_HEADERS = {
   'X-Content-Type-Options': 'nosniff',
@@ -25,7 +24,7 @@ const SECURITY_HEADERS = {
     "style-src-attr 'none'",
     "font-src 'self' https://fonts.gstatic.com data:",
     "img-src 'self' data: blob:",
-    "connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.jsdelivr.net",
+    "connect-src 'self'",
     "manifest-src 'self'",
     'upgrade-insecure-requests'
   ].join('; ')
@@ -33,22 +32,17 @@ const SECURITY_HEADERS = {
 
 export default {
   async fetch(request) {
-    const url = new URL(request.url);
-    if (url.protocol !== 'https:') {
-      url.protocol = 'https:';
-      return Response.redirect(url.toString(), 301);
+    const incoming = new URL(request.url);
+    if (incoming.protocol !== 'https:') {
+      incoming.protocol = 'https:';
+      return Response.redirect(incoming.toString(), 301);
     }
-
+    if (!['roopix.in', 'www.roopix.in'].includes(incoming.hostname)) {
+      return new Response('Not found', { status: 404, headers: { 'Cache-Control': 'no-store' } });
+    }
     const upstream = await fetch(request);
-    const headers = new Headers(upstream.headers);
-    for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
-      headers.set(name, value);
-    }
-
-    return new Response(upstream.body, {
-      status: upstream.status,
-      statusText: upstream.statusText,
-      headers
-    });
+    const responseHeaders = new Headers(upstream.headers);
+    for (const [name, value] of Object.entries(SECURITY_HEADERS)) responseHeaders.set(name, value);
+    return new Response(upstream.body, { status: upstream.status, statusText: upstream.statusText, headers: responseHeaders });
   }
 };
