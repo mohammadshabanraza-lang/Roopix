@@ -24,3 +24,10 @@ The repository did not contain a complete export product dataset. The catalogue 
 ## Legal review
 - Have the privacy and website information page reviewed against the actual seller, entity, checkout and export transaction model before final publication.
 - Add transaction-specific delivery, cancellation, returns and refund policies only after the actual terms are confirmed.
+
+
+## Customer trust information
+- Supply genuine customer reviews or feedback with permission to publish the customer's name, image and words. Do not publish placeholders or invented testimonials.
+- Supply additional current store/product photographs if available.
+- Consider setting up a domain-based business mailbox (for example, after confirming the preferred mailbox name and provider). Do not publish a mailbox until it is configured and tested.
+- Confirm the actual hosting/CDN provider before configuring response security headers or redirect rules.
