@@ -1,0 +1,71 @@
+/* ROOPIX final interaction polish: hero division links, store CTA and social icon. */
+
+/* Make the overlapping corporate hero photographs fully clickable without changing their composition. */
+.home-page .home-visual-card { cursor: pointer; }
+.home-page .home-visual-card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: block;
+  border-radius: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+.home-page .home-visual-card:focus-within {
+  outline: 2px solid #ddc38e;
+  outline-offset: 5px;
+}
+.home-page .home-visual-card__link:focus-visible { outline: none; }
+.home-page .home-visual-card figcaption { pointer-events: none; }
+.ux-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Location CTA: keep the Beauty pill style, but make the entire 44px+ control tappable. */
+.pg-beauty .hero-points li.hero-store-cta { padding: 0 !important; }
+.pg-beauty .hero-points li.hero-store-cta a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  padding: .48rem .85rem;
+  border-radius: inherit;
+  color: inherit;
+  text-decoration: none;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: 1.35;
+}
+.pg-beauty .hero-points li.hero-store-cta a:hover { color: #bd286d; }
+.pg-beauty .hero-points li.hero-store-cta a:focus-visible {
+  outline: 2px solid #e879ad;
+  outline-offset: 3px;
+}
+
+/* Use a crisp, consistent Instagram glyph rather than a text label or missing icon. */
+.pg-beauty .footer-social a {
+  min-width: 44px;
+  min-height: 44px;
+  text-decoration: none;
+}
+.pg-beauty .footer-social .instagram-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+}
+.home-page .home-visual-card img { transition: transform .45s ease; }
+.home-page .home-visual-card:hover img { transform: scale(1.035); }
+@media (prefers-reduced-motion: reduce) {
+  .home-page .home-visual-card img { transition: none; }
+  .home-page .home-visual-card:hover img { transform: none; }
+}
