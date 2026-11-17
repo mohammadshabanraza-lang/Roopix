@@ -1,0 +1,4 @@
+Contact: mailto:roopix.in@gmail.com
+Preferred-Languages: en
+Canonical: https://roopix.in/.well-known/security.txt
+Policy: https://roopix.in/policies/
