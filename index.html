@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.classList.add("js");document.documentElement.classList.add(/\/beauty\//.test(location.pathname)?"pg-beauty":/\/exports\//.test(location.pathname)?"pg-exports":"pg-home");setTimeout(function(){if(!window.__roopixBase){document.documentElement.classList.remove("js");}},4000);</script>
-  <title>ROOPIX — Beauty and Exports from India</title>
-  <meta name="description" content="ROOPIX is an Indian business based in Joya, Uttar Pradesh, with two divisions: ROOPIX Beauty for cosmetics and skincare, and ROOPIX Exports for sourced Indian handicrafts and metalware." />
+  <title>ROOPIX | Beauty Retail &amp; Indian Product Sourcing</title>
+  <meta name="description" content="ROOPIX brings together a multi-brand beauty store in Joya and an export sourcing division connecting buyers with Indian supplier partners." />
   <meta name="keywords" content="ROOPIX, ROOPIX Beauty, ROOPIX Exports, Indian handicrafts, metalware, cosmetics, Joya, Amroha" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="ROOPIX" />
@@ -14,15 +14,15 @@
   <link rel="canonical" href="https://roopix.in/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="ROOPIX" />
-  <meta property="og:title" content="ROOPIX — Beauty and Exports from India" />
-  <meta property="og:description" content="Two divisions, one standard of trust: ROOPIX Beauty and ROOPIX Exports." />
+  <meta property="og:title" content="ROOPIX | Beauty Retail & Indian Product Sourcing" />
+  <meta property="og:description" content="Discover ROOPIX Beauty, a multi-brand store in Joya, and ROOPIX Exports for Indian product sourcing through supplier partners." />
   <meta property="og:url" content="https://roopix.in/" />
   <meta property="og:image" content="https://roopix.in/assets/og-roopix.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ROOPIX — Beauty and Exports from India" />
-  <meta name="twitter:description" content="Two divisions, one standard of trust: ROOPIX Beauty and ROOPIX Exports." />
+  <meta name="twitter:title" content="ROOPIX | Beauty Retail & Indian Product Sourcing" />
+  <meta name="twitter:description" content="Discover ROOPIX Beauty, a multi-brand store in Joya, and ROOPIX Exports for Indian product sourcing through supplier partners." />
   <meta name="twitter:image" content="https://roopix.in/assets/og-roopix.jpg" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="alternate icon" type="image/png" href="assets/favicon-32.png" sizes="32x32" />
@@ -37,8 +37,9 @@
   <link rel="stylesheet" href="assets/premium.css?v=2" />
   <link rel="stylesheet" href="assets/refinements.css?v=1" />
   <link rel="stylesheet" href="assets/beauty-luxe.css?v=2" />
+  <link rel="stylesheet" href="assets/implementation.css?v=1" />
 </head>
-<body>
+<body class="home-page">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -53,13 +54,13 @@
         <span class="logo-fallback" hidden>ROOPIX</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#divisions">Divisions</a></li>
-        <li><a href="#vision">Vision</a></li>
+        <li><a href="#divisions">Our divisions</a></li>
+        <li><a href="#vision">Our approach</a></li>
+        <li><a href="#sourcing">Sourcing</a></li>
         <li><a href="#founder">Founder</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-right">
-        <a class="nav-cta" href="exports/#enquiry">Request a Quote</a>
+        <a class="nav-cta" href="exports/#enquiry">Business enquiries</a>
         <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
       </div>
     </nav>
@@ -69,7 +70,8 @@
     <ul>
       <li><a href="beauty/">ROOPIX Beauty</a></li>
       <li><a href="exports/">ROOPIX Exports</a></li>
-      <li><a href="#vision">Vision</a></li>
+      <li><a href="#vision">Our approach</a></li>
+      <li><a href="#sourcing">Sourcing process</a></li>
       <li><a href="#founder">Founder</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -78,130 +80,96 @@
   </div>
 
   <main id="main">
-    <!-- GATEWAY HERO: both divisions visible in the first screen -->
-    <section class="gw-hero" aria-labelledby="gwTitle">
-      <div class="container gw-hero-inner">
-        <div class="gw-intro rx-reveal-up">
-          <p class="eyebrow">ROOPIX · Joya, Uttar Pradesh</p>
-          <h1 id="gwTitle">Built on trust. <em>Growing with purpose.</em></h1>
-          <p class="lead">ROOPIX brings together two businesses: a beauty retailer serving customers in Joya and online, and an exports division that aims to connect sourced Indian craftsmanship with buyers abroad.</p>
-        </div>
-
-        <div class="divisions" id="divisions">
-          <a class="division-card division-beauty rx-reveal-up" href="beauty/">
-            <span class="division-media" data-clip-reveal data-reveal-direction="up">
-              <img src="assets/hero-banner.webp" alt="ROOPIX Beauty and skincare products" width="900" height="1100" fetchpriority="high" onerror="this.hidden=true" />
-            </span>
-            <div class="division-body">
-              <p class="division-label">Division 01</p>
-              <h2>ROOPIX Beauty</h2>
-              <p class="division-tagline">Beauty, Redefined.</p>
-              <p class="division-desc">Makeup, skincare and beauty essentials from brands including Swiss Beauty, MARS, Insight, Lakmé and Nykaa. Shop online, order on WhatsApp or visit us in Joya.</p>
-              <span class="division-cta">Explore Beauty <span aria-hidden="true">→</span></span>
-            </div>
-          </a>
-          <a class="division-card division-exports rx-reveal-up" href="exports/">
-            <span class="division-media" data-clip-reveal data-reveal-direction="left">
-              <img src="assets/exports/exports-cover.webp" alt="Decorative metal bird feeders and Indian craftsmanship" width="900" height="1100" loading="lazy" onerror="this.hidden=true" />
-            </span>
-            <div class="division-body">
-              <p class="division-label">Division 02</p>
-              <h2>ROOPIX Exports</h2>
-              <p class="division-tagline">Indian Craftsmanship. Global Reach.</p>
-              <p class="division-desc">A sourcing and export coordination partner for selected Indian handicrafts and metalware, including bird feeders, trays, bowls and decorative pieces. Product options are discussed by enquiry.</p>
-              <span class="division-cta">Explore Exports <span aria-hidden="true">→</span></span>
-            </div>
-          </a>
-        </div>
-        <div class="home-signature-row rx-reveal-up" aria-label="ROOPIX business details">
-          <span><i aria-hidden="true"></i> Independent Indian business</span>
-          <span><i aria-hidden="true"></i> Beauty retail &amp; export sourcing</span>
-          <span><i aria-hidden="true"></i> Joya, Uttar Pradesh</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- VISION -->
-    <section id="vision" class="section vision">
-      <div class="container vision-grid">
-        <div class="reveal">
-          <p class="eyebrow">Our Vision</p>
-          <h2 class="section-title">Enduring businesses, built <em>one relationship</em> at a time.</h2>
-        </div>
-        <div class="reveal">
-          <p class="vision-text">ROOPIX began as a beauty retail venture in Joya. It is part of a larger ambition: to build businesses people can trust, and to create opportunities beyond our local market.</p>
-          <ul class="values">
-            <li><strong>Authenticity</strong><span>Saying only what we can stand behind.</span></li>
-            <li><strong>Quality</strong><span>Choosing products and partners with care.</span></li>
-            <li><strong>Relationships</strong><span>Service that earns repeat trust.</span></li>
-            <li><strong>Learning</strong><span>Improving a little every day.</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOUNDER NOTE -->
-    <section id="founder" class="section founder" aria-labelledby="founderTitle">
-      <div class="container founder-grid">
-        <figure class="founder-portrait reveal">
-          <!-- REPLACE: add your real portrait at assets/founder-mohammad-shaban-raza.jpg
-               Recommended: 4:5 portrait, 1200 x 1500 px, JPG, under 300 KB, face in the upper-middle of the frame.
-               Until the file exists, the monogram panel below is shown instead. -->
-          <div class="portrait-placeholder" aria-hidden="true"><span>MSR</span></div>
-          <img src="assets/founder-mohammad-shaban-raza.webp" alt="Portrait of Mohammad Shaban Raza, Founder of ROOPIX" width="1200" height="1500" loading="lazy" onerror="this.remove()" />
-        </figure>
-        <div class="founder-note reveal">
-          <p class="eyebrow">A Note from the Founder</p>
-          <h2 class="section-title" id="founderTitle">Earning trust, <em>every day.</em></h2>
-          <blockquote>
-            <p>ROOPIX began with a simple ambition: to build a brand people can trust, one that makes beauty more accessible while creating opportunities beyond our local market. What started as a beauty retail venture in Joya is part of a bigger vision: to build enduring businesses grounded in authenticity, quality, strong relationships and continuous learning.</p>
-            <p>Through ROOPIX Beauty, we help customers discover beauty and skincare with confidence. Through ROOPIX Exports, we aim to connect thoughtfully sourced Indian products and craftsmanship with buyers around the world. For us, growth is not only about expansion; it is about earning trust, improving every day and creating something that lasts.</p>
-          </blockquote>
-          <p class="signature"><strong>Mohammad Shaban Raza</strong><span>Founder, ROOPIX</span></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW ROOPIX WORKS -->
-    <section class="section home-approach" aria-labelledby="approachTitle">
-      <div class="container">
-        <div class="home-approach-head reveal">
-          <p class="eyebrow">A considered approach</p>
-          <h2 class="section-title" id="approachTitle">Different markets.<br /><em>One way of doing business.</em></h2>
-          <p>We keep the experience straightforward: clear product information, responsive conversations and expectations agreed before a purchase or order moves forward.</p>
-        </div>
-        <div class="home-approach-grid">
-          <article class="home-approach-card reveal"><span>01</span><h3>Clarity first</h3><p>We aim to make the product, enquiry and next step easy to understand.</p></article>
-          <article class="home-approach-card reveal"><span>02</span><h3>People-led service</h3><p>Customers and business buyers can speak with the team before proceeding.</p></article>
-          <article class="home-approach-card reveal"><span>03</span><h3>Details confirmed</h3><p>Availability, specifications and commercial terms are confirmed for the relevant transaction.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section contact">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Get in Touch</p>
-          <h2 class="section-title">Which conversation are <em>you here for?</em></h2>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card reveal">
-            <h3>Beauty customers</h3>
-            <p>Questions about products, shades or orders.</p>
-            <div class="btn-row">
-              <a class="btn btn-wa" href="https://wa.me/919639160626?text=Hi%20ROOPIX%2C%20I%27d%20like%20to%20know%20more%20about%20your%20beauty%20products." target="_blank" rel="noopener">WhatsApp</a>
-              <a class="btn btn-ghost" href="beauty/#store">Visit the store</a>
-            </div>
+    <section class="home-hero" aria-labelledby="homeHeroTitle">
+      <div class="container home-hero__grid">
+        <div class="home-hero__copy">
+          <p class="home-eyebrow">Beauty retail in Joya <span>·</span> Indian product sourcing for global buyers</p>
+          <h1 id="homeHeroTitle">One house.<br /><em>Two considered<br class="home-desktop-break" /> businesses.</em></h1>
+          <p class="home-hero__lead">ROOPIX brings together a multi-brand beauty retailer serving customers in Joya and online, and an exports division sourcing Indian products through supplier partners for buyers abroad.</p>
+          <div class="home-hero__actions">
+            <a class="home-button home-button--dark" href="beauty/">Shop ROOPIX Beauty <span aria-hidden="true">↗</span></a>
+            <a class="home-button home-button--outline" href="exports/">Source with ROOPIX Exports <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="contact-card reveal">
-            <h3>Export buyers</h3>
-            <p>Tell us what you are looking for and we will respond with options.</p>
-            <div class="btn-row">
-              <a class="btn btn-primary" href="exports/#enquiry">Request a Quote</a>
-              <a class="btn btn-ghost" href="mailto:roopix.in@gmail.com">Email us</a>
-            </div>
+          <div class="home-hero__facts" aria-label="ROOPIX at a glance">
+            <div><span>Based in</span><strong>Joya, Uttar Pradesh</strong></div>
+            <div><span>Divisions</span><strong>Retail &amp; export sourcing</strong></div>
+            <div><span>Enquiries</span><strong>India &amp; international buyers</strong></div>
           </div>
+        </div>
+        <div class="home-hero__visual" aria-label="ROOPIX Beauty store and Indian product sourcing">
+          <figure class="home-visual-card home-visual-card--beauty">
+            <img src="assets/store-banner.webp" alt="ROOPIX Beauty retail display in Joya" width="1099" height="1431" fetchpriority="high" decoding="async" />
+            <figcaption><span>Division 01</span><strong>ROOPIX Beauty</strong></figcaption>
+          </figure>
+          <figure class="home-visual-card home-visual-card--exports">
+            <img src="assets/exports/exports-cover.webp" alt="Example bird feeder product imagery for the ROOPIX Exports division" width="1200" height="900" decoding="async" />
+            <figcaption><span>Division 02</span><strong>ROOPIX Exports</strong></figcaption>
+          </figure>
+          <span class="home-visual-note">Different markets. Shared values.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="divisions" class="home-divisions section" aria-labelledby="divisionsTitle">
+      <div class="container">
+        <div class="home-section-head">
+          <div><p class="home-eyebrow">Our divisions</p><h2 id="divisionsTitle">Choose the conversation<br /><em>that brings you here.</em></h2></div>
+          <p>Each division serves a different audience and follows its own way of working, with clear information and details confirmed before a purchase or order moves ahead.</p>
+        </div>
+        <div class="home-division-grid">
+          <article class="home-division-card home-division-card--beauty">
+            <a class="home-division-card__image" href="beauty/" aria-label="Explore ROOPIX Beauty"><img src="assets/store-banner.webp" alt="ROOPIX Beauty store display" width="1099" height="1431" loading="lazy" /></a>
+            <div class="home-division-card__content"><p class="home-card-kicker">For shoppers · Division 01</p><h3>ROOPIX Beauty</h3><p>A multi-brand cosmetics and skincare retailer. Discover makeup, skincare and personal care in store in Joya and through our online store.</p><ul><li>Makeup</li><li>Skincare</li><li>Haircare</li><li>Personal care</li></ul><div class="home-card-actions"><a class="home-text-link" href="beauty/">Explore Beauty <span aria-hidden="true">→</span></a><a class="home-secondary-link" href="https://api1.vyaparapp.in/store/roopix" target="_blank" rel="noopener">Visit online store</a></div></div>
+          </article>
+          <article class="home-division-card home-division-card--exports">
+            <a class="home-division-card__image" href="exports/" aria-label="Explore ROOPIX Exports"><img src="assets/exports/exports-cover.webp" alt="Decorative metal bird feeders" width="1200" height="900" loading="lazy" /></a>
+            <div class="home-division-card__content"><p class="home-card-kicker">For business buyers · Division 02</p><h3>ROOPIX Exports</h3><p>Indian product sourcing and supplier coordination for importers, wholesalers and retailers, working with supplier partners.</p><ul><li>Bird feeders</li><li>Metalware &amp; trays</li><li>Wooden products</li><li>Handicrafts</li></ul><div class="home-card-actions"><a class="home-text-link" href="exports/">Explore Exports <span aria-hidden="true">→</span></a><a class="home-secondary-link" href="exports/#enquiry">Request a quotation</a></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="vision" class="home-vision section" aria-labelledby="visionTitle">
+      <div class="container home-vision__grid">
+        <div><p class="home-eyebrow">Our vision</p><h2 id="visionTitle">Enduring businesses,<br /><em>built one relationship<br />at a time.</em></h2><p class="home-vision__intro">ROOPIX began as a beauty retail venture in Joya. It is part of a larger ambition: to build businesses people can trust and create opportunities beyond our local market.</p></div>
+        <div class="home-values">
+          <article><span>01</span><div><h3>Authenticity</h3><p>Saying only what we can stand behind, about products, sources and timelines.</p></div></article>
+          <article><span>02</span><div><h3>Quality</h3><p>Choosing products and supplier partners with care, and checking details before we commit.</p></div></article>
+          <article><span>03</span><div><h3>Relationships</h3><p>Service that earns repeat trust from shoppers and business buyers alike.</p></div></article>
+          <article><span>04</span><div><h3>Learning</h3><p>Improving what we stock, how we source and how we serve.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-approach-v2 section" aria-labelledby="approachTitle">
+      <div class="container">
+        <div class="home-section-head home-section-head--light"><div><p class="home-eyebrow">A considered approach</p><h2 id="approachTitle">Different markets.<br /><em>One way of doing business.</em></h2></div><p>Clear product information, responsive conversations and expectations agreed before any purchase or order moves forward.</p></div>
+        <div class="home-principles">
+          <article><span>01</span><h3>Clarity first</h3><p>We make the product, the enquiry and the next step easy to understand.</p></article>
+          <article><span>02</span><h3>People-led service</h3><p>Customers and business buyers can speak with the team before proceeding.</p></article>
+          <article><span>03</span><h3>Details confirmed</h3><p>Availability, specifications and commercial terms are confirmed for each transaction.</p></article>
+        </div>
+        <div id="sourcing" class="home-sourcing">
+          <div class="home-sourcing__image"><img src="assets/exports/hero-exports-banner.webp" alt="Bird feeder product examples in an outdoor setting" width="1200" height="900" loading="lazy" /><span>For international buyers</span></div>
+          <div class="home-sourcing__copy"><p class="home-eyebrow">How export sourcing works</p><ol><li><span>01</span><div><strong>Share your brief</strong><p>Product type, target quantity, material, finish and destination market.</p></div></li><li><span>02</span><div><strong>Supplier coordination</strong><p>We discuss suitable options with supplier partners and check feasibility and lead times.</p></div></li><li><span>03</span><div><strong>Specifications and samples</strong><p>Dimensions, materials and packaging are documented; samples are discussed where available.</p></div></li><li><span>04</span><div><strong>Quotation and terms</strong><p>A written quotation is prepared after product and commercial details are confirmed.</p></div></li><li><span>05</span><div><strong>Order coordination</strong><p>Quality, packing and shipping responsibilities are agreed for the relevant order.</p></div></li></ol><p class="home-sourcing__note">ROOPIX Exports works with supplier partners and does not present itself as the manufacturer of every product.</p><a class="home-text-link home-text-link--light" href="exports/#enquiry">Discuss a sourcing requirement <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="founder" class="home-founder section" aria-labelledby="founderTitle">
+      <div class="container home-founder__grid">
+        <figure class="home-founder__portrait"><img src="assets/founder-mohammad-shaban-raza.webp" alt="Mohammad Shaban Raza, Founder of ROOPIX" width="1200" height="1500" loading="lazy" /></figure>
+        <div><p class="home-eyebrow">A note from the founder</p><h2 id="founderTitle">Built with care.<br /><em>Growing with purpose.</em></h2><blockquote>Through ROOPIX Beauty, we help customers discover beauty and skincare with confidence. Through ROOPIX Exports, we aim to connect thoughtfully sourced Indian products with buyers around the world. Growth is about earning trust, improving every day and creating something that lasts.</blockquote><p class="home-founder__signature"><strong>Mohammad Shaban Raza</strong><span>Founder, ROOPIX</span></p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="home-contact section" aria-labelledby="contactTitle">
+      <div class="container">
+        <div class="home-section-head"><div><p class="home-eyebrow">Get in touch</p><h2 id="contactTitle">Which conversation<br /><em>are you here for?</em></h2></div><p>Choose the right route and your enquiry can reach the relevant channel.</p></div>
+        <div class="home-contact-grid">
+          <a href="beauty/" class="home-contact-card"><span>For shoppers</span><strong>ROOPIX Beauty</strong><p>Questions about makeup, skincare, products or an order.</p><b>Explore Beauty <i aria-hidden="true">↗</i></b></a>
+          <a href="exports/#enquiry" class="home-contact-card"><span>For business buyers</span><strong>ROOPIX Exports</strong><p>Product sourcing, supplier coordination and quotation enquiries.</p><b>Start a buyer enquiry <i aria-hidden="true">↗</i></b></a>
+          <a href="mailto:roopix.in@gmail.com" class="home-contact-card"><span>General enquiries</span><strong>Contact ROOPIX</strong><p>For general questions about the business or website.</p><b>roopix.in@gmail.com <i aria-hidden="true">↗</i></b></a>
         </div>
       </div>
     </section>
@@ -233,7 +201,7 @@
           <li><a href="#vision">Vision</a></li>
           <li><a href="#founder">Founder</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="policies/">Website policies</a></li>
+          <li><a href="policies/">Terms &amp; privacy</a></li>
         </ul>
       </div>
       <div>
