@@ -258,7 +258,7 @@ html.pg-beauty body {
 
 /* Image-led category tiles. Layer order is explicit so photos never disappear. */
 .pg-beauty .cat-grid {
-  grid-template-columns: repeat(5, minmax(0,1fr));
+  grid-template-columns: repeat(4, minmax(0,1fr));
   gap: clamp(.7rem, 1.3vw, 1.15rem);
 }
 .pg-beauty .cat-card {
@@ -291,6 +291,7 @@ html.pg-beauty body {
   object-fit: cover;
   opacity: 1;
   filter: saturate(.88) contrast(1.04);
+  object-position: center center;
   transition: transform 1.1s cubic-bezier(.2,.8,.2,1), filter .7s;
 }
 .pg-beauty .cat-card::before {
@@ -490,7 +491,7 @@ html.pg-beauty body {
   .pg-beauty .b-hero-media { justify-self:stretch; width:100%; max-width:none; aspect-ratio:1.18/1; }
   .pg-beauty .cat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .pg-beauty .cat-card { min-height:285px; aspect-ratio:.82; }
-  .pg-beauty .cat-card:last-child:nth-child(odd) { grid-column:1/-1; aspect-ratio:1.55; }
+  .pg-beauty .cat-card:last-child:nth-child(odd) { grid-column:auto; aspect-ratio:.82; }
   .pg-beauty .brand-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .pg-beauty .brand-card:last-child:nth-child(odd) { grid-column:1/-1; }
 }
